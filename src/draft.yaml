@@ -1,0 +1,76 @@
+models:
+  Playground: 
+    name: string unique
+    slug: string unique
+    user_id: id foreign
+  Play/Variant:
+    name: string unique
+    adjudication_name: string
+    scs_to_win: integer
+  Play/Province:
+    variant_id: id foreign
+    short_name: string
+    is_supply_center: boolean default:false
+  Play/ProvinceNames:
+    province_id: id foreign
+    long_name: string
+    language: enum:de_DE,en_GB
+  Play/BasePower:
+    variant_id: id foreign
+    color: string nullable
+  Play/AdjudicationInstance:
+    adjudicatable_id: id
+    adjudicatable_type: string
+    winning_power_id: id foreign:powers.id
+  Play/Power:
+    base_power_id: id foreign
+    user_id: id foreign nullable
+    adjudication_instance_id: id foreign
+  Play/Phase:
+    adjudication_instance_id: id foreign
+    season: string
+    year: int
+    type: string
+    started_at: datetime
+    length: integer nullable
+    adjudicated: boolean default:false
+    next_phase_id: id foreign:phase
+  Play/Unit:
+    phase_id: id foreign
+    power_id: id foreign
+    province_id: id foreign
+    type: enum:army,fleet
+  Play/Influence:
+    phase_id: id foreign
+    power_id: id foreign
+    province_id: id foreign
+  Orders/Move:
+    unit_id: id foreign
+    location_id: id foreign:provinces.id 
+    to_id: id foreign:provinces.id
+  Orders/SupportHold:
+    unit_id: id foreign
+    location_id: id foreign:provinces.id 
+    to_id: id foreign:provinces.id
+  Orders/SupportMove:
+    unit_id: id foreign
+    location_id: id foreign:provinces.id 
+    from_id: id foreign:provinces.id 
+    to_id: id foreign:provinces.id
+  Orders/Hold:
+    unit_id: id foreign
+    location_id: id foreign:provinces.id 
+  Orders/Disband:
+    unit_id: id foreign
+    location_id: id foreign:provinces.id 
+  Orders/Build:
+    type: enum:army,fleet
+    location_id: id foreign:provinces.id 
+  Orders/Convoy:
+    unit_id: id foreign
+    location_id: id foreign:provinces.id 
+    from_id: id foreign:provinces.id 
+    to_id: id foreign:provinces.id
+  TextInstruction:
+    payload: string
+    phase_id: id foreign
