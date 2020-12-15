@@ -1,31 +1,43 @@
 models:
-  Playground: 
+  Playground/Playground: 
     name: string unique
     slug: string unique
     user_id: id foreign
+
+  Playground/Branch:
+    name: string
+    slug: string
+    created_from: id foreign:phases.id
+
   Play/Variant:
     name: string unique
     adjudication_name: string
     scs_to_win: integer
+
   Play/Province:
     variant_id: id foreign
     short_name: string
     is_supply_center: boolean default:false
+
   Play/ProvinceNames:
     province_id: id foreign
     long_name: string
     language: enum:de_DE,en_GB
+
   Play/BasePower:
     variant_id: id foreign
     color: string nullable
+
   Play/AdjudicationInstance:
     adjudicatable_id: id
     adjudicatable_type: string
     winning_power_id: id foreign:powers.id
+
   Play/Power:
     base_power_id: id foreign
     user_id: id foreign nullable
     adjudication_instance_id: id foreign
+
   Play/Phase:
     adjudication_instance_id: id foreign
     season: string
@@ -35,42 +47,59 @@ models:
     length: integer nullable
     adjudicated: boolean default:false
     next_phase_id: id foreign:phase
+
   Play/Unit:
     phase_id: id foreign
     power_id: id foreign
     province_id: id foreign
     type: enum:army,fleet
+
   Play/Influence:
     phase_id: id foreign
     power_id: id foreign
-    province_id: id foreign
-  Orders/Move:
+    province_id: id foreign   
+
+  Play/Orders/Move:
     unit_id: id foreign
     location_id: id foreign:provinces.id 
     to_id: id foreign:provinces.id
-  Orders/SupportHold:
+    selected_for_resultion: boolean default:false
+
+  Play/Orders/SupportHold:
     unit_id: id foreign
     location_id: id foreign:provinces.id 
     to_id: id foreign:provinces.id
-  Orders/SupportMove:
+    selected_for_resultion: boolean default:false
+
+  Play/Orders/SupportMove:
     unit_id: id foreign
     location_id: id foreign:provinces.id 
     from_id: id foreign:provinces.id 
     to_id: id foreign:provinces.id
-  Orders/Hold:
+    selected_for_resultion: boolean default:false
+
+  Play/Orders/Hold:
     unit_id: id foreign
     location_id: id foreign:provinces.id 
-  Orders/Disband:
+    selected_for_resultion: boolean default:false
+
+  Play/Orders/Disband:
     unit_id: id foreign
     location_id: id foreign:provinces.id 
-  Orders/Build:
+    selected_for_resultion: boolean default:false
+
+  Play/Orders/Build:
     type: enum:army,fleet
     location_id: id foreign:provinces.id 
-  Orders/Convoy:
+    selected_for_resultion: boolean default:false
+
+  Play/Orders/Convoy:
     unit_id: id foreign
     location_id: id foreign:provinces.id 
     from_id: id foreign:provinces.id 
     to_id: id foreign:provinces.id
-  TextInstruction:
+    selected_for_resultion: boolean default:false
+    
+  Play/TextInstruction:
     payload: string
     phase_id: id foreign
