@@ -34,6 +34,6 @@ class Build extends Model
 
     public function location()
     {
-        return $this->belongsTo(\App\Models\Play\Orders\Province::class);
+        return $this->belongsTo(\App\Models\Play\Province::class);
     }
 }

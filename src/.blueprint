@@ -18,25 +18,25 @@ created:
     - database/factories/Play/Orders/BuildFactory.php
     - database/factories/Play/Orders/ConvoyFactory.php
     - database/factories/Play/TextInstructionFactory.php
-    - database/migrations/2020_12_15_140704_create_playgrounds_table.php
-    - database/migrations/2020_12_15_140705_create_branches_table.php
-    - database/migrations/2020_12_15_140706_create_variants_table.php
-    - database/migrations/2020_12_15_140707_create_provinces_table.php
-    - database/migrations/2020_12_15_140708_create_province_names_table.php
-    - database/migrations/2020_12_15_140709_create_base_powers_table.php
-    - database/migrations/2020_12_15_140710_create_adjudication_instances_table.php
-    - database/migrations/2020_12_15_140711_create_powers_table.php
-    - database/migrations/2020_12_15_140712_create_phases_table.php
-    - database/migrations/2020_12_15_140713_create_units_table.php
-    - database/migrations/2020_12_15_140714_create_influences_table.php
-    - database/migrations/2020_12_15_140715_create_moves_table.php
-    - database/migrations/2020_12_15_140716_create_support_holds_table.php
-    - database/migrations/2020_12_15_140717_create_support_moves_table.php
-    - database/migrations/2020_12_15_140718_create_holds_table.php
-    - database/migrations/2020_12_15_140719_create_disbands_table.php
-    - database/migrations/2020_12_15_140720_create_builds_table.php
-    - database/migrations/2020_12_15_140721_create_convoys_table.php
-    - database/migrations/2020_12_15_140722_create_text_instructions_table.php
+    - database/migrations/2020_12_15_162558_create_playgrounds_table.php
+    - database/migrations/2020_12_15_162559_create_branches_table.php
+    - database/migrations/2020_12_15_162600_create_variants_table.php
+    - database/migrations/2020_12_15_162601_create_provinces_table.php
+    - database/migrations/2020_12_15_162602_create_province_names_table.php
+    - database/migrations/2020_12_15_162603_create_base_powers_table.php
+    - database/migrations/2020_12_15_162604_create_adjudication_instances_table.php
+    - database/migrations/2020_12_15_162605_create_powers_table.php
+    - database/migrations/2020_12_15_162606_create_phases_table.php
+    - database/migrations/2020_12_15_162607_create_units_table.php
+    - database/migrations/2020_12_15_162608_create_influences_table.php
+    - database/migrations/2020_12_15_162609_create_moves_table.php
+    - database/migrations/2020_12_15_162610_create_support_holds_table.php
+    - database/migrations/2020_12_15_162611_create_support_moves_table.php
+    - database/migrations/2020_12_15_162612_create_holds_table.php
+    - database/migrations/2020_12_15_162613_create_disbands_table.php
+    - database/migrations/2020_12_15_162614_create_builds_table.php
+    - database/migrations/2020_12_15_162615_create_convoys_table.php
+    - database/migrations/2020_12_15_162616_create_text_instructions_table.php
     - app/Models/Playground/Playground.php
     - app/Models/Playground/Branch.php
     - app/Models/Play/Variant.php

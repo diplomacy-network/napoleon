@@ -33,6 +33,6 @@ class Playground extends Model
 
     public function user()
     {
-        return $this->belongsTo(\App\Models\Playground\User::class);
+        return $this->belongsTo(\App\Models\User::class);
     }
 }

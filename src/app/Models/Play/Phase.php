@@ -2,6 +2,7 @@
 
 namespace App\Models\Play;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -39,6 +40,7 @@ class Phase extends Model
     ];
 
 
+    // Relationships
     public function adjudicationInstance()
     {
         return $this->belongsTo(\App\Models\Play\AdjudicationInstance::class);
@@ -47,5 +49,10 @@ class Phase extends Model
     public function nextPhase()
     {
         return $this->belongsTo(\App\Models\Play\Phase::class);
+    }
+
+    // Scopes
+    public function scopeCurrent(Builder $query){
+        return $query->where('next_phase_id', null);
     }
 }

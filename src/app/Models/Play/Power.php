@@ -40,7 +40,7 @@ class Power extends Model
 
     public function user()
     {
-        return $this->belongsTo(\App\Models\Play\User::class);
+        return $this->belongsTo(\App\Models\User::class);
     }
 
     public function adjudicationInstance()

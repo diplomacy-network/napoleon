@@ -11,6 +11,7 @@ namespace PHPSTORM_META {
     */
     override(new \Illuminate\Contracts\Container\Container, map([
         '' => '@',
+            'App\Utility\Adjudicator\AdjudicatableInterface' => \App\Utility\Adjudicator\CliAdjudicator::class,
             'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'Blueprint\Blueprint' => \Blueprint\Blueprint::class,
@@ -30,7 +31,9 @@ namespace PHPSTORM_META {
             'Illuminate\Cache\RateLimiter' => \Illuminate\Cache\RateLimiter::class,
             'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
             'Illuminate\Console\Scheduling\ScheduleFinishCommand' => \Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleListCommand' => \Illuminate\Console\Scheduling\ScheduleListCommand::class,
             'Illuminate\Console\Scheduling\ScheduleRunCommand' => \Illuminate\Console\Scheduling\ScheduleRunCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleTestCommand' => \Illuminate\Console\Scheduling\ScheduleTestCommand::class,
             'Illuminate\Console\Scheduling\ScheduleWorkCommand' => \Illuminate\Console\Scheduling\ScheduleWorkCommand::class,
             'Illuminate\Contracts\Auth\Access\Gate' => \Illuminate\Auth\Access\Gate::class,
             'Illuminate\Contracts\Auth\StatefulGuard' => \Illuminate\Auth\SessionGuard::class,
@@ -211,6 +214,7 @@ namespace PHPSTORM_META {
         ]));
     override(\Illuminate\Container\Container::makeWith(0), map([
         '' => '@',
+            'App\Utility\Adjudicator\AdjudicatableInterface' => \App\Utility\Adjudicator\CliAdjudicator::class,
             'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'Blueprint\Blueprint' => \Blueprint\Blueprint::class,
@@ -230,7 +234,9 @@ namespace PHPSTORM_META {
             'Illuminate\Cache\RateLimiter' => \Illuminate\Cache\RateLimiter::class,
             'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
             'Illuminate\Console\Scheduling\ScheduleFinishCommand' => \Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleListCommand' => \Illuminate\Console\Scheduling\ScheduleListCommand::class,
             'Illuminate\Console\Scheduling\ScheduleRunCommand' => \Illuminate\Console\Scheduling\ScheduleRunCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleTestCommand' => \Illuminate\Console\Scheduling\ScheduleTestCommand::class,
             'Illuminate\Console\Scheduling\ScheduleWorkCommand' => \Illuminate\Console\Scheduling\ScheduleWorkCommand::class,
             'Illuminate\Contracts\Auth\Access\Gate' => \Illuminate\Auth\Access\Gate::class,
             'Illuminate\Contracts\Auth\StatefulGuard' => \Illuminate\Auth\SessionGuard::class,
@@ -411,6 +417,7 @@ namespace PHPSTORM_META {
         ]));
     override(\Illuminate\Contracts\Container\Container::get(0), map([
         '' => '@',
+            'App\Utility\Adjudicator\AdjudicatableInterface' => \App\Utility\Adjudicator\CliAdjudicator::class,
             'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'Blueprint\Blueprint' => \Blueprint\Blueprint::class,
@@ -430,7 +437,9 @@ namespace PHPSTORM_META {
             'Illuminate\Cache\RateLimiter' => \Illuminate\Cache\RateLimiter::class,
             'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
             'Illuminate\Console\Scheduling\ScheduleFinishCommand' => \Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleListCommand' => \Illuminate\Console\Scheduling\ScheduleListCommand::class,
             'Illuminate\Console\Scheduling\ScheduleRunCommand' => \Illuminate\Console\Scheduling\ScheduleRunCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleTestCommand' => \Illuminate\Console\Scheduling\ScheduleTestCommand::class,
             'Illuminate\Console\Scheduling\ScheduleWorkCommand' => \Illuminate\Console\Scheduling\ScheduleWorkCommand::class,
             'Illuminate\Contracts\Auth\Access\Gate' => \Illuminate\Auth\Access\Gate::class,
             'Illuminate\Contracts\Auth\StatefulGuard' => \Illuminate\Auth\SessionGuard::class,
@@ -611,6 +620,7 @@ namespace PHPSTORM_META {
         ]));
     override(\Illuminate\Contracts\Container\Container::make(0), map([
         '' => '@',
+            'App\Utility\Adjudicator\AdjudicatableInterface' => \App\Utility\Adjudicator\CliAdjudicator::class,
             'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'Blueprint\Blueprint' => \Blueprint\Blueprint::class,
@@ -630,7 +640,9 @@ namespace PHPSTORM_META {
             'Illuminate\Cache\RateLimiter' => \Illuminate\Cache\RateLimiter::class,
             'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
             'Illuminate\Console\Scheduling\ScheduleFinishCommand' => \Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleListCommand' => \Illuminate\Console\Scheduling\ScheduleListCommand::class,
             'Illuminate\Console\Scheduling\ScheduleRunCommand' => \Illuminate\Console\Scheduling\ScheduleRunCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleTestCommand' => \Illuminate\Console\Scheduling\ScheduleTestCommand::class,
             'Illuminate\Console\Scheduling\ScheduleWorkCommand' => \Illuminate\Console\Scheduling\ScheduleWorkCommand::class,
             'Illuminate\Contracts\Auth\Access\Gate' => \Illuminate\Auth\Access\Gate::class,
             'Illuminate\Contracts\Auth\StatefulGuard' => \Illuminate\Auth\SessionGuard::class,
@@ -811,6 +823,7 @@ namespace PHPSTORM_META {
         ]));
     override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
         '' => '@',
+            'App\Utility\Adjudicator\AdjudicatableInterface' => \App\Utility\Adjudicator\CliAdjudicator::class,
             'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'Blueprint\Blueprint' => \Blueprint\Blueprint::class,
@@ -830,7 +843,9 @@ namespace PHPSTORM_META {
             'Illuminate\Cache\RateLimiter' => \Illuminate\Cache\RateLimiter::class,
             'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
             'Illuminate\Console\Scheduling\ScheduleFinishCommand' => \Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleListCommand' => \Illuminate\Console\Scheduling\ScheduleListCommand::class,
             'Illuminate\Console\Scheduling\ScheduleRunCommand' => \Illuminate\Console\Scheduling\ScheduleRunCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleTestCommand' => \Illuminate\Console\Scheduling\ScheduleTestCommand::class,
             'Illuminate\Console\Scheduling\ScheduleWorkCommand' => \Illuminate\Console\Scheduling\ScheduleWorkCommand::class,
             'Illuminate\Contracts\Auth\Access\Gate' => \Illuminate\Auth\Access\Gate::class,
             'Illuminate\Contracts\Auth\StatefulGuard' => \Illuminate\Auth\SessionGuard::class,
@@ -1011,6 +1026,7 @@ namespace PHPSTORM_META {
         ]));
     override(\App::get(0), map([
         '' => '@',
+            'App\Utility\Adjudicator\AdjudicatableInterface' => \App\Utility\Adjudicator\CliAdjudicator::class,
             'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'Blueprint\Blueprint' => \Blueprint\Blueprint::class,
@@ -1030,7 +1046,9 @@ namespace PHPSTORM_META {
             'Illuminate\Cache\RateLimiter' => \Illuminate\Cache\RateLimiter::class,
             'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
             'Illuminate\Console\Scheduling\ScheduleFinishCommand' => \Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleListCommand' => \Illuminate\Console\Scheduling\ScheduleListCommand::class,
             'Illuminate\Console\Scheduling\ScheduleRunCommand' => \Illuminate\Console\Scheduling\ScheduleRunCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleTestCommand' => \Illuminate\Console\Scheduling\ScheduleTestCommand::class,
             'Illuminate\Console\Scheduling\ScheduleWorkCommand' => \Illuminate\Console\Scheduling\ScheduleWorkCommand::class,
             'Illuminate\Contracts\Auth\Access\Gate' => \Illuminate\Auth\Access\Gate::class,
             'Illuminate\Contracts\Auth\StatefulGuard' => \Illuminate\Auth\SessionGuard::class,
@@ -1211,6 +1229,7 @@ namespace PHPSTORM_META {
         ]));
     override(\App::make(0), map([
         '' => '@',
+            'App\Utility\Adjudicator\AdjudicatableInterface' => \App\Utility\Adjudicator\CliAdjudicator::class,
             'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'Blueprint\Blueprint' => \Blueprint\Blueprint::class,
@@ -1230,7 +1249,9 @@ namespace PHPSTORM_META {
             'Illuminate\Cache\RateLimiter' => \Illuminate\Cache\RateLimiter::class,
             'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
             'Illuminate\Console\Scheduling\ScheduleFinishCommand' => \Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleListCommand' => \Illuminate\Console\Scheduling\ScheduleListCommand::class,
             'Illuminate\Console\Scheduling\ScheduleRunCommand' => \Illuminate\Console\Scheduling\ScheduleRunCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleTestCommand' => \Illuminate\Console\Scheduling\ScheduleTestCommand::class,
             'Illuminate\Console\Scheduling\ScheduleWorkCommand' => \Illuminate\Console\Scheduling\ScheduleWorkCommand::class,
             'Illuminate\Contracts\Auth\Access\Gate' => \Illuminate\Auth\Access\Gate::class,
             'Illuminate\Contracts\Auth\StatefulGuard' => \Illuminate\Auth\SessionGuard::class,
@@ -1411,6 +1432,7 @@ namespace PHPSTORM_META {
         ]));
     override(\App::makeWith(0), map([
         '' => '@',
+            'App\Utility\Adjudicator\AdjudicatableInterface' => \App\Utility\Adjudicator\CliAdjudicator::class,
             'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'Blueprint\Blueprint' => \Blueprint\Blueprint::class,
@@ -1430,7 +1452,9 @@ namespace PHPSTORM_META {
             'Illuminate\Cache\RateLimiter' => \Illuminate\Cache\RateLimiter::class,
             'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
             'Illuminate\Console\Scheduling\ScheduleFinishCommand' => \Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleListCommand' => \Illuminate\Console\Scheduling\ScheduleListCommand::class,
             'Illuminate\Console\Scheduling\ScheduleRunCommand' => \Illuminate\Console\Scheduling\ScheduleRunCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleTestCommand' => \Illuminate\Console\Scheduling\ScheduleTestCommand::class,
             'Illuminate\Console\Scheduling\ScheduleWorkCommand' => \Illuminate\Console\Scheduling\ScheduleWorkCommand::class,
             'Illuminate\Contracts\Auth\Access\Gate' => \Illuminate\Auth\Access\Gate::class,
             'Illuminate\Contracts\Auth\StatefulGuard' => \Illuminate\Auth\SessionGuard::class,
@@ -1611,6 +1635,7 @@ namespace PHPSTORM_META {
         ]));
     override(\app(0), map([
         '' => '@',
+            'App\Utility\Adjudicator\AdjudicatableInterface' => \App\Utility\Adjudicator\CliAdjudicator::class,
             'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'Blueprint\Blueprint' => \Blueprint\Blueprint::class,
@@ -1630,7 +1655,9 @@ namespace PHPSTORM_META {
             'Illuminate\Cache\RateLimiter' => \Illuminate\Cache\RateLimiter::class,
             'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
             'Illuminate\Console\Scheduling\ScheduleFinishCommand' => \Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleListCommand' => \Illuminate\Console\Scheduling\ScheduleListCommand::class,
             'Illuminate\Console\Scheduling\ScheduleRunCommand' => \Illuminate\Console\Scheduling\ScheduleRunCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleTestCommand' => \Illuminate\Console\Scheduling\ScheduleTestCommand::class,
             'Illuminate\Console\Scheduling\ScheduleWorkCommand' => \Illuminate\Console\Scheduling\ScheduleWorkCommand::class,
             'Illuminate\Contracts\Auth\Access\Gate' => \Illuminate\Auth\Access\Gate::class,
             'Illuminate\Contracts\Auth\StatefulGuard' => \Illuminate\Auth\SessionGuard::class,
@@ -1811,6 +1838,7 @@ namespace PHPSTORM_META {
         ]));
     override(\resolve(0), map([
         '' => '@',
+            'App\Utility\Adjudicator\AdjudicatableInterface' => \App\Utility\Adjudicator\CliAdjudicator::class,
             'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'Blueprint\Blueprint' => \Blueprint\Blueprint::class,
@@ -1830,7 +1858,9 @@ namespace PHPSTORM_META {
             'Illuminate\Cache\RateLimiter' => \Illuminate\Cache\RateLimiter::class,
             'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
             'Illuminate\Console\Scheduling\ScheduleFinishCommand' => \Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleListCommand' => \Illuminate\Console\Scheduling\ScheduleListCommand::class,
             'Illuminate\Console\Scheduling\ScheduleRunCommand' => \Illuminate\Console\Scheduling\ScheduleRunCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleTestCommand' => \Illuminate\Console\Scheduling\ScheduleTestCommand::class,
             'Illuminate\Console\Scheduling\ScheduleWorkCommand' => \Illuminate\Console\Scheduling\ScheduleWorkCommand::class,
             'Illuminate\Contracts\Auth\Access\Gate' => \Illuminate\Auth\Access\Gate::class,
             'Illuminate\Contracts\Auth\StatefulGuard' => \Illuminate\Auth\SessionGuard::class,
@@ -2011,6 +2041,7 @@ namespace PHPSTORM_META {
         ]));
     override(\Psr\Container\ContainerInterface::get(0), map([
         '' => '@',
+            'App\Utility\Adjudicator\AdjudicatableInterface' => \App\Utility\Adjudicator\CliAdjudicator::class,
             'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'Blueprint\Blueprint' => \Blueprint\Blueprint::class,
@@ -2030,7 +2061,9 @@ namespace PHPSTORM_META {
             'Illuminate\Cache\RateLimiter' => \Illuminate\Cache\RateLimiter::class,
             'Illuminate\Console\Scheduling\Schedule' => \Illuminate\Console\Scheduling\Schedule::class,
             'Illuminate\Console\Scheduling\ScheduleFinishCommand' => \Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleListCommand' => \Illuminate\Console\Scheduling\ScheduleListCommand::class,
             'Illuminate\Console\Scheduling\ScheduleRunCommand' => \Illuminate\Console\Scheduling\ScheduleRunCommand::class,
+            'Illuminate\Console\Scheduling\ScheduleTestCommand' => \Illuminate\Console\Scheduling\ScheduleTestCommand::class,
             'Illuminate\Console\Scheduling\ScheduleWorkCommand' => \Illuminate\Console\Scheduling\ScheduleWorkCommand::class,
             'Illuminate\Contracts\Auth\Access\Gate' => \Illuminate\Auth\Access\Gate::class,
             'Illuminate\Contracts\Auth\StatefulGuard' => \Illuminate\Auth\SessionGuard::class,

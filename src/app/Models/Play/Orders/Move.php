@@ -37,16 +37,16 @@ class Move extends Model
 
     public function unit()
     {
-        return $this->belongsTo(\App\Models\Play\Orders\Unit::class);
+        return $this->belongsTo(\App\Models\Play\Unit::class);
     }
 
     public function location()
     {
-        return $this->belongsTo(\App\Models\Play\Orders\Province::class);
+        return $this->belongsTo(\App\Models\Play\Province::class);
     }
 
     public function to()
     {
-        return $this->belongsTo(\App\Models\Play\Orders\Province::class);
+        return $this->belongsTo(\App\Models\Play\Province::class);
     }
 }

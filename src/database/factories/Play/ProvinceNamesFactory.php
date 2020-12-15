@@ -1,11 +1,11 @@
 <?php
 
-namespace Database\Factories;
+namespace Database\Factories\Play;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Play\Province;
-use App\Models\Play\ProvinceNames;
+use App\Models\Play\ProvinceName;
 
 class ProvinceNamesFactory extends Factory
 {
@@ -14,7 +14,7 @@ class ProvinceNamesFactory extends Factory
      *
      * @var string
      */
-    protected $model = ProvinceNames::class;
+    protected $model = ProvinceName::class;
 
     /**
      * Define the model's default state.

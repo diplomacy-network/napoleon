@@ -28,4 +28,9 @@ class Variant extends Model
     protected $casts = [
         'id' => 'integer',
     ];
+
+    // Relations
+    public function provinces(){
+        return $this->hasMany(Province::class);
+    }
 }

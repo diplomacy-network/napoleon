@@ -2,6 +2,7 @@
 
 namespace App\Models\Playground;
 
+use App\Models\Play\Phase;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -35,6 +36,8 @@ class Branch extends Model
 
     public function createdFrom()
     {
-        return $this->belongsTo(\App\Models\Playground\Phase::class);
+        return $this->belongsTo(Phase::class);
     }
+
+    
 }

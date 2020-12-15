@@ -34,11 +34,13 @@ class AdjudicationInstance extends Model
 
     public function adjudicatable()
     {
-        return $this->belongsTo(\App\Models\Play\Adjudicatable::class);
+        // return $this->belongsTo(\App\Models\Play\Adjudicatable::class);
     }
 
     public function winningPower()
     {
         return $this->belongsTo(\App\Models\Play\Power::class);
     }
+
+    
 }
