@@ -8,6 +8,7 @@ models:
     name: string
     slug: string
     created_from: id foreign:phases.id
+    public: boolean default:false
 
   Play/Variant:
     name: string unique
@@ -99,7 +100,7 @@ models:
     from_id: id foreign:provinces.id 
     to_id: id foreign:provinces.id
     selected_for_resultion: boolean default:false
-    
+
   Play/TextInstruction:
     payload: string
     phase_id: id foreign
