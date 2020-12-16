@@ -17,17 +17,15 @@ class ReadVariantProvinces implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public AdjudicatableInterface $adjudicator;
     public Variant $variant;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct(AdjudicatableInterface $adjudicatableInterface, Variant $variant)
+    public function __construct(Variant $variant)
     {
         $this->variant = $variant;
-        $this->adjudicator = $adjudicatableInterface;
     }
 
     /**
@@ -35,10 +33,9 @@ class ReadVariantProvinces implements ShouldQueue
      *
      * @return void
      */
-    public function handle()
+    public function handle(AdjudicatableInterface $adjudicator)
     {
-        $meta = $this->adjudicator->getMeta($this->variant->adjudication_name);
-        var_dump($meta);
+        $meta = $adjudicator->getMeta($this->variant->adjudication_name);
         foreach ($meta->Provinces as $short => $long) {
             $province = new Province();
             $province->short_name = $short;
