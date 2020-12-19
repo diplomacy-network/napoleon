@@ -14,11 +14,6 @@ class CreatePlaygroundAction {
     public function execute(User $user, string $name): Playground {
         $slug = Str::slug($name);
         $user->refresh();
-        Log::debug("Started to create Playground", [
-            'slug' => $slug,
-            'id' => $user->id,
-            'exists' => $user->playgrounds()->where('slug', $slug)->exists(),
-        ]);
         if($user->playgrounds()->where('slug', $slug)->exists()){
             throw new PlaygroundSlugAlreadyExistsForUser;
         }

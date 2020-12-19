@@ -467,6 +467,7 @@ namespace App\Models\Playground{
  * @property string $name
  * @property string $slug
  * @property int|null $created_from_phase_id
+ * @property int|null $playground_id
  * @property bool $public
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -479,6 +480,7 @@ namespace App\Models\Playground{
  * @method static \Illuminate\Database\Eloquent\Builder|Branch whereCreatedFromPhaseId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Branch whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Branch whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Branch wherePlaygroundId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Branch wherePublic($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Branch whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Branch whereUpdatedAt($value)
@@ -496,6 +498,8 @@ namespace App\Models\Playground{
  * @property int $user_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Playground\Branch[] $branches
+ * @property-read int|null $branches_count
  * @property-read \App\Models\User $user
  * @method static \Illuminate\Database\Eloquent\Builder|Playground newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Playground newQuery()

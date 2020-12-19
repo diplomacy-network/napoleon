@@ -26,7 +26,7 @@ class BranchFactory extends Factory
         return [
             'name' => $this->faker->name,
             'slug' => $this->faker->slug,
-            'created_from' => Phase::factory(),
+            'created_from_phase_id' => null,
             'public' => $this->faker->boolean,
         ];
     }

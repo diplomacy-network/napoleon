@@ -5,23 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ea96f43-9257-4efe-8cc2-d46d861918d2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/.phpstorm.meta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/_ide_helper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Actions/Playground/CreateBranchAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/Feature/Actions/Playground/CreateBranchTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_ide_helper_models.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/_ide_helper_models.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Actions/Playground/CreatePlaygroundAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Actions/Playground/CreatePlaygroundAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Jobs/Play/Adjudicator/ReadVariantProvinces.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Jobs/Play/Adjudicator/ReadVariantProvinces.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Models/Playground/Playground.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Playground/Playground.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Utility/Adjudicator/CliAdjudicator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Utility/Adjudicator/CliAdjudicator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/src/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/adjudicate.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/adjudicate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/factories/Playground/PlaygroundFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/factories/Playground/PlaygroundFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/Feature/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/Feature/Jobs/Playground/CreateBranchTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/Feature/Jobs/Playground/CreatePlaygroundTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/Feature/Actions/Playground/CreatePlaygroundTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/Unit/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140705_create_branches_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140705_create_branches_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,6 +163,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1ls8XtnmjZNgYmyAtRdUeUOLsbK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -182,12 +175,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/tests/Feature/Actions/Playground" />
     <property name="settings.editor.selected.configurable" value="LogHighlighting" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Code\DNW\napoleon\src\tests\Feature\Actions\Playground" />
       <recent name="D:\Code\DNW\napoleon\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -217,7 +211,7 @@
       <workItem from="1608376227460" duration="33000" />
       <workItem from="1608376298451" duration="1236000" />
       <workItem from="1608379027525" duration="90000" />
-      <workItem from="1608379136060" duration="10543000" />
+      <workItem from="1608379136060" duration="12322000" />
     </task>
     <servers />
   </component>

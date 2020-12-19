@@ -69,7 +69,7 @@ class CreatePlaygroundTest extends TestCase
             'slug' => Str::slug($this->name),
             'name' => $this->name,
         ])->create();
-        app(CreatePlaygroundAction::class)->execute($this->user2, $this->variant, $this->name);
+        app(CreatePlaygroundAction::class)->execute($this->user2, $this->name);
         $this->assertDatabaseHas('playgrounds', [
             'user_id' => $this->user2->id,
             'slug' => Str::slug($this->name),

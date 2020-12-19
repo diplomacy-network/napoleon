@@ -20,6 +20,7 @@ class CreateBranchesTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->foreignId('created_from_phase_id')->nullable()->constrained('phases')->cascadeOnDelete();
+            $table->foreignId('playground_id')->nullable()->constrained('playgrounds')->cascadeOnDelete();
             $table->boolean('public')->default(false);
             $table->timestamps();
         });
