@@ -17,10 +17,12 @@ namespace App\Models\Play{
  * @property int $id
  * @property int $adjudicatable_id
  * @property string $adjudicatable_type
- * @property int $winning_power_id
+ * @property int|null $winning_power_id
+ * @property int $variant_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Play\Power $winningPower
+ * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $adjudicatable
+ * @property-read \App\Models\Play\Power|null $winningPower
  * @method static \Illuminate\Database\Eloquent\Builder|AdjudicationInstance newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|AdjudicationInstance newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|AdjudicationInstance query()
@@ -29,6 +31,7 @@ namespace App\Models\Play{
  * @method static \Illuminate\Database\Eloquent\Builder|AdjudicationInstance whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|AdjudicationInstance whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|AdjudicationInstance whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|AdjudicationInstance whereVariantId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|AdjudicationInstance whereWinningPowerId($value)
  */
 	class AdjudicationInstance extends \Eloquent {}
@@ -485,7 +488,7 @@ namespace App\Models\Playground{
  * @method static \Illuminate\Database\Eloquent\Builder|Branch whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Branch whereUpdatedAt($value)
  */
-	class Branch extends \Eloquent {}
+	class Branch extends \Eloquent implements \App\Models\Contracts\AdjudicatableInterface {}
 }
 
 namespace App\Models\Playground{

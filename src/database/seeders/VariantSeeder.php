@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Actions\Play\Adjudicator\ReadVariantProvincesAction;
 use App\Jobs\Play\Adjudicator\ReadVariantProvinces;
 use App\Models\Play\Variant;
 use Illuminate\Database\Seeder;
@@ -20,6 +21,6 @@ class VariantSeeder extends Seeder
         $variant->adjudication_name = "Classical";
         $variant->scs_to_win = 18;
         $variant->save();
-        ReadVariantProvinces::dispatchSync($variant);
+        app(ReadVariantProvincesAction::class)->execute($variant);
     }
 }

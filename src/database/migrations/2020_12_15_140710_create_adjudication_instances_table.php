@@ -20,6 +20,7 @@ class CreateAdjudicationInstancesTable extends Migration
             $table->unsignedBigInteger('adjudicatable_id');
             $table->string('adjudicatable_type');
             $table->foreignId('winning_power_id')->nullable()->constrained('powers')->cascadeOnDelete();
+            $table->foreignId('variant_id')->constrained('variants')->cascadeOnDelete();
             $table->timestamps();
         });
 

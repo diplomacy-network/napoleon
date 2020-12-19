@@ -4,6 +4,7 @@ namespace App\Models\Play;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class AdjudicationInstance extends Model
@@ -19,6 +20,7 @@ class AdjudicationInstance extends Model
         'adjudicatable_id',
         'adjudicatable_type',
         'winning_power_id',
+        'variant_id',
     ];
 
     /**
@@ -30,12 +32,18 @@ class AdjudicationInstance extends Model
         'id' => 'integer',
         'adjudicatable_id' => 'integer',
         'winning_power_id' => 'integer',
+        'variant_id' => 'integer',
     ];
 
 
+    // Relations
     public function adjudicatable(): MorphTo
     {
          return $this->morphTo();
+    }
+
+    public function variant(): BelongsTo {
+        return $this->belongsTo(Variant::class);
     }
 
     public function winningPower()

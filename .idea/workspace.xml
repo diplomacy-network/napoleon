@@ -5,19 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ea96f43-9257-4efe-8cc2-d46d861918d2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/Actions/Play/CreateAdjudicationInstance.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Models/Contracts/AdjudicatableInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Actions/Play/Adjudicator/InitializeVariantOnAdjudicatableInstanceAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Actions/Play/Adjudicator/ReadVariantProvincesAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/.phpstorm.meta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Jobs/Play/Adjudicator/AdvanceAdjudicatableInstance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Jobs/Play/Adjudicator/AdvanceAdjudicatableInstance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Jobs/Play/Adjudicator/ReadVariantProvinces.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Jobs/Play/Adjudicator/ReadVariantProvinces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_ide_helper_models.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/_ide_helper_models.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Actions/Play/CreateAdjudicationInstance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Actions/Play/CreateAdjudicationInstance.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Models/Play/AdjudicationInstance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Play/AdjudicationInstance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Models/Playground/Branch.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Playground/Branch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Models/Playground/Playground.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Playground/Playground.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Utility/Adjudicator/AdjudicatableInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Utility/Adjudicator/AdjudicatorInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Utility/Adjudicator/CliAdjudicator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Utility/Adjudicator/CliAdjudicator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140710_create_adjudication_instances_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140710_create_adjudication_instances_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/seeders/VariantSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/seeders/VariantSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/Feature/Actions/Play/CreateAdjudicationInstanceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/Feature/Actions/Play/CreateAdjudicationInstanceTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +213,7 @@
       <workItem from="1608376227460" duration="33000" />
       <workItem from="1608376298451" duration="1236000" />
       <workItem from="1608379027525" duration="90000" />
-      <workItem from="1608379136060" duration="15240000" />
+      <workItem from="1608379136060" duration="18812000" />
     </task>
     <servers />
   </component>
