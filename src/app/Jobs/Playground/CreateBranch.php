@@ -13,13 +13,13 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
+
 class CreateBranch implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-
     public Playground $playground;
     public string $name;
-    public bool $public;
+    public bool $public; 
     public Phase $phase;
     
     /**
@@ -31,12 +31,12 @@ class CreateBranch implements ShouldQueue
     {
         $this->playground = $playground;
         $this->name = $name;
-        $this->public;
+        $this->public = $public;
         $this->phase = $phase;
     }
 
     public static function fromRequest(){
-
+        
     }
 
     /**
@@ -51,7 +51,5 @@ class CreateBranch implements ShouldQueue
         $branch->public = $this->public;
         $branch->created_from_phase_id = $this->phase?->id;
         $branch->save();
-
-        
     }
 }
