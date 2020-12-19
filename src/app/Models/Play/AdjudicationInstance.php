@@ -4,6 +4,7 @@ namespace App\Models\Play;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class AdjudicationInstance extends Model
 {
@@ -32,15 +33,15 @@ class AdjudicationInstance extends Model
     ];
 
 
-    public function adjudicatable()
+    public function adjudicatable(): MorphTo
     {
-        // return $this->belongsTo(\App\Models\Play\Adjudicatable::class);
+         return $this->morphTo();
     }
 
     public function winningPower()
     {
-        return $this->belongsTo(\App\Models\Play\Power::class);
+        return $this->belongsTo(Power::class);
     }
 
-    
+
 }

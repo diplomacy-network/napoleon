@@ -3,7 +3,7 @@
 namespace App\Jobs\Play\Adjudicator;
 
 use App\Models\Play\AdjudicationInstance;
-use App\Utility\Adjudicator\AdjudicatableInterface;
+use App\Utility\Adjudicator\AdjudicatorInterface;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -30,9 +30,9 @@ class AdvanceAdjudicatableInstance implements ShouldQueue
      *
      * @return void
      */
-    public function handle(AdjudicatableInterface $adjudicator)
+    public function handle(AdjudicatorInterface $adjudicator)
     {
-        
-        
+
+
     }
 }

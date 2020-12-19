@@ -5,7 +5,7 @@ namespace App\Jobs\Play\Adjudicator;
 use App\Models\Play\Province;
 use App\Models\Play\ProvinceName;
 use App\Models\Play\Variant;
-use App\Utility\Adjudicator\AdjudicatableInterface;
+use App\Utility\Adjudicator\AdjudicatorInterface;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -32,10 +32,10 @@ class ReadVariantProvinces implements ShouldQueue
     /**
      * Execute the job.
      *
-     * @param  \App\Utility\Adjudicator\AdjudicatableInterface  $adjudicator
+     * @param  \App\Utility\Adjudicator\AdjudicatorInterface  $adjudicator
      * @return void
      */
-    public function handle(AdjudicatableInterface $adjudicator)
+    public function handle(AdjudicatorInterface $adjudicator)
     {
         $meta = $adjudicator->getMeta($this->variant->adjudication_name);
         foreach ($meta->Provinces as $short => $long) {

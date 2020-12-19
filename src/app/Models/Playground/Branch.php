@@ -2,12 +2,14 @@
 
 namespace App\Models\Playground;
 
+use App\Models\Contracts\AdjudicatableInterface;
 use App\Models\Play\AdjudicationInstance;
 use App\Models\Play\Phase;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 
-class Branch extends Model
+class Branch extends Model implements AdjudicatableInterface
 {
     use HasFactory;
 
@@ -40,9 +42,10 @@ class Branch extends Model
         return $this->belongsTo(Phase::class);
     }
 
-    public function adjudicationInstance(){
+    public function adjudicationInstance(): MorphOne
+    {
         return $this->morphOne(AdjudicationInstance::class, 'adjudicatable');
     }
 
-    
+
 }

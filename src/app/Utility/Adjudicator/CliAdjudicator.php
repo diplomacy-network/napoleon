@@ -4,7 +4,7 @@ namespace App\Utility\Adjudicator;
 
 use Symfony\Component\Process\Process;
 
-class CliAdjudicator implements AdjudicatableInterface {
+class CliAdjudicator implements AdjudicatorInterface {
 
     public static function getMeta(string $name) {
         $process = new Process([config('adjudicate.alex.path'), 'meta', "--variant={$name}"]);
