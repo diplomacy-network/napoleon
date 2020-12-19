@@ -466,16 +466,17 @@ namespace App\Models\Playground{
  * @property int $id
  * @property string $name
  * @property string $slug
- * @property int $created_from
+ * @property int|null $created_from_phase_id
  * @property bool $public
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Play\AdjudicationInstance|null $adjudicationInstance
  * @property-read \App\Models\Play\Phase $createdFrom
  * @method static \Illuminate\Database\Eloquent\Builder|Branch newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Branch newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Branch query()
  * @method static \Illuminate\Database\Eloquent\Builder|Branch whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Branch whereCreatedFrom($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Branch whereCreatedFromPhaseId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Branch whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Branch whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Branch wherePublic($value)
@@ -528,6 +529,8 @@ namespace App\Models{
  * @property-read string $profile_photo_url
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Playground\Playground[] $playgrounds
+ * @property-read int|null $playgrounds_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Sanctum\PersonalAccessToken[] $tokens
  * @property-read int|null $tokens_count
  * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()

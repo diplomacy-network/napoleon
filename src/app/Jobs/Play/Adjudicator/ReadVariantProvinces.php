@@ -18,10 +18,11 @@ class ReadVariantProvinces implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     public Variant $variant;
+
     /**
      * Create a new job instance.
      *
-     * @return void
+     * @param  \App\Models\Play\Variant  $variant
      */
     public function __construct(Variant $variant)
     {
@@ -31,6 +32,7 @@ class ReadVariantProvinces implements ShouldQueue
     /**
      * Execute the job.
      *
+     * @param  \App\Utility\Adjudicator\AdjudicatableInterface  $adjudicator
      * @return void
      */
     public function handle(AdjudicatableInterface $adjudicator)

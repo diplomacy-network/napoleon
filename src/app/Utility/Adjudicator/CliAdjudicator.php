@@ -7,10 +7,10 @@ use Symfony\Component\Process\Process;
 class CliAdjudicator implements AdjudicatableInterface {
 
     public static function getMeta(string $name) {
-        $process = new Process(['alex', 'meta', '--variant=Classical']);
+        $process = new Process([config('adjudicate.alex.path'), 'meta', "--variant={$name}"]);
         $process->run();
         if(!$process->isSuccessful()){
-            return $process->getErrorOutput();
+            throw new \Exception($process->getErrorOutput());
         }
 
         return json_decode($process->getOutput());
@@ -23,5 +23,5 @@ class CliAdjudicator implements AdjudicatableInterface {
     public static function getAdjudicated(string $name, mixed $data): array {
 
      }
-    
+
 }

@@ -5,7 +5,6 @@ namespace Database\Factories\Playground;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Playground\Playground;
-use App\Models\Playground\User;
 
 class PlaygroundFactory extends Factory
 {
@@ -26,7 +25,7 @@ class PlaygroundFactory extends Factory
         return [
             'name' => $this->faker->name,
             'slug' => $this->faker->slug,
-            'user_id' => User::factory(),
+            'user_id' => \App\Models\User::factory(),
         ];
     }
 }
