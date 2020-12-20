@@ -2,6 +2,7 @@
 
 namespace App\Models\Play;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -42,5 +43,11 @@ class Province extends Model
     public function unit(): HasOne
     {
         return $this->hasOne(Unit::class);
+    }
+
+    // Scopes
+    public function scopeName(Builder $query, string $name): Builder
+    {
+        return $query->where('short_name', $name);
     }
 }

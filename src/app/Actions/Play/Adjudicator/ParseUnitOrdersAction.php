@@ -12,6 +12,7 @@ class ParseUnitOrdersAction
     public function execute(Phase $phase, stdClass $data)
     {
         foreach ($data->PossibleOrders as $province_string => $types){
+            $province = $phase->adjudicationInstance->variant->provinces()->name($province_string)->first();
 
         }
     }
