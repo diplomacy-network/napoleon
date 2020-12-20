@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Actions\Play\Adjudicator\ReadVariantBasePowersAction;
 use App\Actions\Play\Adjudicator\ReadVariantProvincesAction;
 use App\Jobs\Play\Adjudicator\ReadVariantProvinces;
 use App\Models\Play\Variant;
@@ -22,5 +23,6 @@ class VariantSeeder extends Seeder
         $variant->scs_to_win = 18;
         $variant->save();
         app(ReadVariantProvincesAction::class)->execute($variant);
+        app(ReadVariantBasePowersAction::class)->execute($variant);
     }
 }

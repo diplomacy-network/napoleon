@@ -3,10 +3,10 @@
 namespace App\Models\Play;
 
 use App\Enums\Play\PhaseTypeEnum;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Phase extends Model
 {
@@ -54,9 +54,15 @@ class Phase extends Model
         return $this->belongsTo(Phase::class);
     }
 
-    // Scopes
-    public function scopeCurrent(Builder $query): Builder
+    public function units(): HasMany
     {
-        return $query->where('next_phase_id', null);
+        return $this->hasMany(Unit::class);
+    }
+
+    // Queries
+    public function unitInProvince(Province $p): Unit {
+        return $this->units()->whereHas('province', function($q) use ($p){
+            $q->where('id', $p->id);
+        })->first();
     }
 }

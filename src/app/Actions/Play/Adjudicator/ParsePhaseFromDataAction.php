@@ -9,9 +9,9 @@ use App\Models\Play\AdjudicationInstance;
 use App\Models\Play\Phase;
 use stdClass;
 
-class CreatePhaseFromDataAction
+class ParsePhaseFromDataAction
 {
-    public function execute(AdjudicationInstance $instance, Phase $previous, stdClass $data): Phase{
+    public function execute(AdjudicationInstance $instance, stdClass $data, Phase $previous = null): Phase{
         $phase = new Phase();
         $phase->season = $data->Season;
         $phase->adjudication_instance_id = $instance->id;

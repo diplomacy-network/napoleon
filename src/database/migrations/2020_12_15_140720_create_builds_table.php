@@ -17,9 +17,7 @@ class CreateBuildsTable extends Migration
 
         Schema::create('builds', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ["army","fleet"]);
-            $table->foreignId('location_id')->constrained('provinces')->cascadeOnDelete();
-            $table->boolean('selected_for_resultion')->default(false);
+            $table->enum('type', ["ARMY","FLEET"]);
             $table->timestamps();
         });
 

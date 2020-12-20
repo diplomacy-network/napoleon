@@ -10,6 +10,17 @@
  */
 
 
+namespace App\Models{
+/**
+ * App\Models\Order
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|Order newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Order newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Order query()
+ */
+	class Order extends \Eloquent {}
+}
+
 namespace App\Models\Play{
 /**
  * App\Models\Play\AdjudicationInstance
@@ -24,6 +35,8 @@ namespace App\Models\Play{
  * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $adjudicatable
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Play\Phase[] $phases
  * @property-read int|null $phases_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Play\Power[] $powers
+ * @property-read int|null $powers_count
  * @property-read \App\Models\Play\Variant $variant
  * @property-read \App\Models\Play\Power|null $winningPower
  * @method static \Illuminate\Database\Eloquent\Builder|AdjudicationInstance newModelQuery()
@@ -92,196 +105,15 @@ namespace App\Models\Play{
 	class Influence extends \Eloquent {}
 }
 
-namespace App\Models\Play\Orders{
+namespace App\Models\Play{
 /**
- * App\Models\Play\Orders\Build
+ * App\Models\Play\Order
  *
- * @property int $id
- * @property string $type
- * @property int $location_id
- * @property bool $selected_for_resultion
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Play\Province $location
- * @method static \Illuminate\Database\Eloquent\Builder|Build newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Build newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Build query()
- * @method static \Illuminate\Database\Eloquent\Builder|Build whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Build whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Build whereLocationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Build whereSelectedForResultion($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Build whereType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Build whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Order newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Order newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Order query()
  */
-	class Build extends \Eloquent {}
-}
-
-namespace App\Models\Play\Orders{
-/**
- * App\Models\Play\Orders\Convoy
- *
- * @property int $id
- * @property int $unit_id
- * @property int $location_id
- * @property int $from_id
- * @property int $to_id
- * @property bool $selected_for_resultion
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Play\Province $from
- * @property-read \App\Models\Play\Province $location
- * @property-read \App\Models\Play\Province $to
- * @property-read \App\Models\Play\Unit $unit
- * @method static \Illuminate\Database\Eloquent\Builder|Convoy newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Convoy newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Convoy query()
- * @method static \Illuminate\Database\Eloquent\Builder|Convoy whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Convoy whereFromId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Convoy whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Convoy whereLocationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Convoy whereSelectedForResultion($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Convoy whereToId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Convoy whereUnitId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Convoy whereUpdatedAt($value)
- */
-	class Convoy extends \Eloquent {}
-}
-
-namespace App\Models\Play\Orders{
-/**
- * App\Models\Play\Orders\Disband
- *
- * @property int $id
- * @property int $unit_id
- * @property int $location_id
- * @property bool $selected_for_resultion
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Play\Province $location
- * @property-read \App\Models\Play\Unit $unit
- * @method static \Illuminate\Database\Eloquent\Builder|Disband newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Disband newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Disband query()
- * @method static \Illuminate\Database\Eloquent\Builder|Disband whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Disband whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Disband whereLocationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Disband whereSelectedForResultion($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Disband whereUnitId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Disband whereUpdatedAt($value)
- */
-	class Disband extends \Eloquent {}
-}
-
-namespace App\Models\Play\Orders{
-/**
- * App\Models\Play\Orders\Hold
- *
- * @property int $id
- * @property int $unit_id
- * @property int $location_id
- * @property bool $selected_for_resultion
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Play\Province $location
- * @property-read \App\Models\Play\Unit $unit
- * @method static \Illuminate\Database\Eloquent\Builder|Hold newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Hold newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Hold query()
- * @method static \Illuminate\Database\Eloquent\Builder|Hold whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Hold whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Hold whereLocationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Hold whereSelectedForResultion($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Hold whereUnitId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Hold whereUpdatedAt($value)
- */
-	class Hold extends \Eloquent {}
-}
-
-namespace App\Models\Play\Orders{
-/**
- * App\Models\Play\Orders\Move
- *
- * @property int $id
- * @property int $unit_id
- * @property int $location_id
- * @property int $to_id
- * @property bool $selected_for_resultion
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Play\Province $location
- * @property-read \App\Models\Play\Province $to
- * @property-read \App\Models\Play\Unit $unit
- * @method static \Illuminate\Database\Eloquent\Builder|Move newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Move newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Move query()
- * @method static \Illuminate\Database\Eloquent\Builder|Move whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Move whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Move whereLocationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Move whereSelectedForResultion($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Move whereToId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Move whereUnitId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Move whereUpdatedAt($value)
- */
-	class Move extends \Eloquent {}
-}
-
-namespace App\Models\Play\Orders{
-/**
- * App\Models\Play\Orders\SupportHold
- *
- * @property int $id
- * @property int $unit_id
- * @property int $location_id
- * @property int $to_id
- * @property bool $selected_for_resultion
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Play\Province $location
- * @property-read \App\Models\Play\Province $to
- * @property-read \App\Models\Play\Unit $unit
- * @method static \Illuminate\Database\Eloquent\Builder|SupportHold newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|SupportHold newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|SupportHold query()
- * @method static \Illuminate\Database\Eloquent\Builder|SupportHold whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|SupportHold whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|SupportHold whereLocationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|SupportHold whereSelectedForResultion($value)
- * @method static \Illuminate\Database\Eloquent\Builder|SupportHold whereToId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|SupportHold whereUnitId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|SupportHold whereUpdatedAt($value)
- */
-	class SupportHold extends \Eloquent {}
-}
-
-namespace App\Models\Play\Orders{
-/**
- * App\Models\Play\Orders\SupportMove
- *
- * @property int $id
- * @property int $unit_id
- * @property int $location_id
- * @property int $from_id
- * @property int $to_id
- * @property bool $selected_for_resultion
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Play\Province $from
- * @property-read \App\Models\Play\Province $location
- * @property-read \App\Models\Play\Province $to
- * @property-read \App\Models\Play\Unit $unit
- * @method static \Illuminate\Database\Eloquent\Builder|SupportMove newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|SupportMove newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|SupportMove query()
- * @method static \Illuminate\Database\Eloquent\Builder|SupportMove whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|SupportMove whereFromId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|SupportMove whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|SupportMove whereLocationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|SupportMove whereSelectedForResultion($value)
- * @method static \Illuminate\Database\Eloquent\Builder|SupportMove whereToId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|SupportMove whereUnitId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|SupportMove whereUpdatedAt($value)
- */
-	class SupportMove extends \Eloquent {}
+	class Order extends \Eloquent {}
 }
 
 namespace App\Models\Play{
@@ -301,7 +133,8 @@ namespace App\Models\Play{
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Play\AdjudicationInstance $adjudicationInstance
  * @property-read Phase|null $previousPhase
- * @method static \Illuminate\Database\Eloquent\Builder|Phase current()
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Play\Unit[] $units
+ * @property-read int|null $units_count
  * @method static \Illuminate\Database\Eloquent\Builder|Phase newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Phase newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Phase query()
@@ -355,6 +188,7 @@ namespace App\Models\Play{
  * @property string $short_name
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Play\Unit|null $unit
  * @property-read \App\Models\Play\Variant $variant
  * @method static \Illuminate\Database\Eloquent\Builder|Province newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Province newQuery()
@@ -422,7 +256,7 @@ namespace App\Models\Play{
  * @property int $phase_id
  * @property int $power_id
  * @property int $province_id
- * @property string $type
+ * @property \App\Enums\Play\UnitTypeEnum $type
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Play\Phase $phase

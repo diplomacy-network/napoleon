@@ -1,10 +1,12 @@
 <?php
 
 
-namespace App\Actions\Play\Adjudicator;
+namespace App\Actions\Play;
 
 
-use App\Enums\Play\PhaseTypeEnum;
+use App\Actions\Play\Adjudicator\ParsePhaseFromDataAction;
+use App\Actions\Play\Adjudicator\ParsePhaseProvinceDataAction;
+use App\Actions\Play\Adjudicator\ParseUnitProvinceDataAction;
 use App\Models\Play\AdjudicationInstance;
 use App\Models\Play\Phase;
 use App\Utility\Adjudicator\AdjudicatorInterface;
@@ -21,8 +23,11 @@ class CreateInitialPhaseAction
             throw new \Exception("Cannot create initial phase. This adjudication instance already has a phase.");
         }
         $init = $this->adjudicator->getInit($instance->variant->adjudication_name);
-        return app(CreatePhaseFromDataAction::class)->execute($instance, null, $init);
-
+        app(BuildFreshAdjudicatableInstanceAction::class)->execute($instance);
+        $phase = app(ParsePhaseFromDataAction::class)->execute($instance, $init);
+        app(ParsePhaseProvinceDataAction::class)->execute($phase, $init);
+        app(ParseUnitProvinceDataAction::class)->execute($phase, $init);
+        return $phase;
 
 
     }

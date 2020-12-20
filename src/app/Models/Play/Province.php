@@ -4,6 +4,8 @@ namespace App\Models\Play;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Province extends Model
 {
@@ -32,8 +34,13 @@ class Province extends Model
     ];
 
 
-    public function variant()
+    public function variant(): BelongsTo
     {
-        return $this->belongsTo(\App\Models\Play\Variant::class);
+        return $this->belongsTo(Variant::class);
+    }
+
+    public function unit(): HasOne
+    {
+        return $this->hasOne(Unit::class);
     }
 }

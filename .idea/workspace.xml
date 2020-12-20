@@ -5,35 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ea96f43-9257-4efe-8cc2-d46d861918d2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/Actions/Play/Adjudicator/CreateInitialPhaseAction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Actions/Play/Adjudicator/CreatePhaseFromDataAction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Actions/Play/Adjudicator/ParsePhaseProvinceDataAction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Actions/Play/Adjudicator/ReadVariantCountriesAction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Actions/Play/BuildFreshAdjudicatableInstanceAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/napoleon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/napoleon.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Actions/Play/Adjudicator/ParseUnitOrdersAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Actions/Play/Adjudicator/ParseUnitProvinceDataAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/.phpstorm.meta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/_ide_helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/_ide_helper_models.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/_ide_helper_models.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Actions/Play/Adjudicator/InitializeVariantOnAdjudicatableInstanceAction.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Actions/Play/CreateAdjudicationInstance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Actions/Play/CreateAdjudicationInstanceAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Actions/Play/Adjudicator/CreateInitialPhaseAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Actions/Play/CreateInitialPhaseAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Actions/Play/Adjudicator/CreatePhaseFromDataAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Actions/Play/Adjudicator/ParsePhaseFromDataAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Actions/Play/Adjudicator/ParsePhaseProvinceDataAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Actions/Play/Adjudicator/ParsePhaseProvinceDataAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Actions/Play/Adjudicator/ReadVariantCountriesAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Actions/Play/Adjudicator/ReadVariantBasePowersAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Actions/Play/BuildFreshAdjudicatableInstanceAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Actions/Play/BuildFreshAdjudicatableInstanceAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Models/Play/AdjudicationInstance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Play/AdjudicationInstance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Models/Play/BasePower.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Play/BasePower.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Models/Play/Orders/Build.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Models/Play/Orders/Convoy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Models/Play/Orders/Disband.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Models/Play/Orders/Hold.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Models/Play/Orders/Move.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Models/Play/Orders/SupportHold.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Models/Play/Orders/SupportMove.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Models/Play/Phase.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Play/Phase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Models/Play/Variant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Play/Variant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Utility/Adjudicator/AdjudicatorInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Utility/Adjudicator/AdjudicatorInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Utility/Adjudicator/CliAdjudicator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Utility/Adjudicator/CliAdjudicator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/src/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/factories/Play/AdjudicationInstanceFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/factories/Play/AdjudicationInstanceFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/factories/Play/PhaseFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/factories/Play/PhaseFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140707_create_provinces_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140707_create_provinces_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140709_create_base_powers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140709_create_base_powers_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140712_create_phases_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140712_create_phases_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140714_create_influences_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140714_create_influences_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/Feature/Actions/Play/CreateAdjudicationInstanceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/Feature/Actions/Play/CreateAdjudicationInstanceTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Models/Play/Province.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Play/Province.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Models/Play/Unit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Play/Unit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140713_create_units_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140713_create_units_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140715_create_moves_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140716_create_support_holds_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140717_create_support_moves_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140718_create_holds_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140719_create_disbands_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140720_create_builds_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140721_create_convoys_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/seeders/VariantSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/seeders/VariantSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,6 +209,8 @@
       <recent name="D:\Code\DNW\napoleon\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Code\DNW\napoleon\src\app\Models\Play" />
+      <recent name="D:\Code\DNW\napoleon\src\app\Enums\Play" />
       <recent name="D:\Code\DNW\napoleon\src\app\Actions\Play" />
       <recent name="D:\Code\DNW\napoleon\src\bin" />
     </key>
@@ -237,7 +239,7 @@
       <workItem from="1608376298451" duration="1236000" />
       <workItem from="1608379027525" duration="90000" />
       <workItem from="1608379136060" duration="24553000" />
-      <workItem from="1608411636233" duration="15108000" />
+      <workItem from="1608411636233" duration="27700000" />
     </task>
     <servers />
   </component>

@@ -18,8 +18,6 @@ class CreateDisbandsTable extends Migration
         Schema::create('disbands', function (Blueprint $table) {
             $table->id();
             $table->foreignId('unit_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('location_id')->constrained('provinces')->cascadeOnDelete();
-            $table->boolean('selected_for_resultion')->default(false);
             $table->timestamps();
         });
 

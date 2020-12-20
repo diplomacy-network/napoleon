@@ -58,6 +58,9 @@ class AdjudicationInstance extends Model
         return $this->hasMany(Phase::class);
     }
 
+    public function powers(): HasMany {
+        return $this->hasMany(Power::class);
+    }
 
 
     // Query

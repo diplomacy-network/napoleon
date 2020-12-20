@@ -2,6 +2,7 @@
 
 namespace App\Models\Play;
 
+use App\Enums\Play\UnitTypeEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -31,6 +32,7 @@ class Unit extends Model
         'phase_id' => 'integer',
         'power_id' => 'integer',
         'province_id' => 'integer',
+        'type' => UnitTypeEnum::class,
     ];
 
 
