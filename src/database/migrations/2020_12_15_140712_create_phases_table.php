@@ -20,11 +20,11 @@ class CreatePhasesTable extends Migration
             $table->foreignId('adjudication_instance_id')->constrained()->cascadeOnDelete();
             $table->string('season');
             $table->string('year');
-            $table->string('type');
+            $table->enum('type', ['MOVEMENT', 'RETREAT', 'ADJUSTMENT']);
             $table->dateTime('started_at');
             $table->integer('length')->nullable();
             $table->boolean('adjudicated')->default(false);
-            $table->foreignId('next_phase_id')->constrained('phases')->cascadeOnDelete();
+            $table->foreignId('previous_phase_id')->nullable()->constrained('phases')->cascadeOnDelete();
             $table->timestamps();
         });
 

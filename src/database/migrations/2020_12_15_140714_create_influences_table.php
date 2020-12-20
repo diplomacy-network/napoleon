@@ -19,6 +19,7 @@ class CreateInfluencesTable extends Migration
             $table->id();
             $table->foreignId('phase_id')->constrained()->cascadeOnDelete();
             $table->foreignId('power_id')->constrained()->cascadeOnDelete();
+            $table->boolean('is_supply_center')->default(false);
             $table->foreignId('province_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });

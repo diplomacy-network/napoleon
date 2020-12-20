@@ -3,7 +3,7 @@
 namespace App\Utility\Adjudicator;
 
 interface AdjudicatorInterface {
-    public static function getMeta(string $name);
-    public static function getInit(string $name): array;
-    public static function getAdjudicated(string $name, mixed $data): array;
+    public static function getMeta(string $name): \stdClass;
+    public static function getInit(string $name): \stdClass;
+    public static function getAdjudicated(string $name, mixed $data): \stdClass;
 }

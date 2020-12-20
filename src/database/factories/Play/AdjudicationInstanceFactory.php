@@ -2,9 +2,9 @@
 
 namespace Database\Factories\Play;
 
+use App\Models\Playground\Playground;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\Play\Adjudicatable;
 use App\Models\Play\AdjudicationInstance;
 use App\Models\Play\Power;
 
@@ -25,9 +25,16 @@ class AdjudicationInstanceFactory extends Factory
     public function definition()
     {
         return [
-            'adjudicatable_id' => Adjudicatable::factory(),
-            'adjudicatable_type' => $this->faker->word,
             'winning_power_id' => Power::factory(),
         ];
+    }
+
+    public function playground(): AdjudicationInstanceFactory
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'adjudicatable_id' => Playground::factory(),
+            ];
+        });
     }
 }

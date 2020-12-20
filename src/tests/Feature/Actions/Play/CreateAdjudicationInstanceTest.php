@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Actions\Play;
 
-use App\Actions\Play\CreateAdjudicationInstance;
+use App\Actions\Play\CreateAdjudicationInstanceAction;
 use App\Models\Play\Variant;
 use App\Models\Playground\Branch;
 use App\Models\Playground\Playground;
@@ -21,10 +21,11 @@ class CreateAdjudicationInstanceTest extends TestCase
     }
 
 
-    public function testCanCreateInstanceFromBranch(){
+    public function testCanCreateInstanceFromBranch(): void
+    {
         $variant = Variant::factory()->create();
         $branch = Branch::factory()->create();
-        $instance = app(CreateAdjudicationInstance::class)->execute($branch, $variant);
+        $instance = app(CreateAdjudicationInstanceAction::class)->execute($branch, $variant);
         $branch->refresh();
         $this->assertTrue($instance->adjudicatable->is($branch));
         $this->assertTrue($instance->variant->is($variant));

@@ -10,7 +10,7 @@ use App\Models\Play\AdjudicationInstance;
 use App\Models\Play\Variant;
 use App\Models\Playground\Playground;
 
-class CreateAdjudicationInstance
+class CreateAdjudicationInstanceAction
 {
     public function execute(AdjudicatableInterface $adjudicatable, Variant $variant): AdjudicationInstance{
         if($adjudicatable->adjudicationInstance()->exists()){

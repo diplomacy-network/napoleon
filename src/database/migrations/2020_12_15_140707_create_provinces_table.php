@@ -19,7 +19,6 @@ class CreateProvincesTable extends Migration
             $table->id();
             $table->foreignId('variant_id')->constrained()->cascadeOnDelete();
             $table->string('short_name');
-            $table->boolean('is_supply_center')->default(false);
             $table->timestamps();
         });
 

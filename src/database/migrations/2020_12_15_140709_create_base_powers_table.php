@@ -18,6 +18,7 @@ class CreateBasePowersTable extends Migration
         Schema::create('base_powers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('variant_id')->constrained()->cascadeOnDelete();
+            $table->string('name');
             $table->string('color')->nullable();
             $table->timestamps();
         });

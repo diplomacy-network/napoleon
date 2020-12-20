@@ -10427,6 +10427,18 @@
         {
                         return \Illuminate\Http\Request::hasValidRelativeSignature();
         }
+                    /**
+         * 
+         *
+         * @see \Spatie\Enum\Laravel\Http\EnumRequest::transformEnums()
+         * @param array $transformations
+         * @return void 
+         * @static 
+         */ 
+        public static function transformEnums($transformations)
+        {
+                        \Illuminate\Http\Request::transformEnums($transformations);
+        }
          
     }
             /**
@@ -16118,6 +16130,18 @@
         public static function hasValidRelativeSignature()
         {
                         return \Illuminate\Http\Request::hasValidRelativeSignature();
+        }
+                    /**
+         * 
+         *
+         * @see \Spatie\Enum\Laravel\Http\EnumRequest::transformEnums()
+         * @param array $transformations
+         * @return void 
+         * @static 
+         */ 
+        public static function transformEnums($transformations)
+        {
+                        \Illuminate\Http\Request::transformEnums($transformations);
         }
          
     }

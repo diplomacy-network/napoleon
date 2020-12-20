@@ -5,6 +5,7 @@ namespace App\Models\Play;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class AdjudicationInstance extends Model
@@ -39,17 +40,38 @@ class AdjudicationInstance extends Model
     // Relations
     public function adjudicatable(): MorphTo
     {
-         return $this->morphTo();
+        return $this->morphTo();
     }
 
-    public function variant(): BelongsTo {
+    public function variant(): BelongsTo
+    {
         return $this->belongsTo(Variant::class);
     }
 
-    public function winningPower()
+    public function winningPower(): BelongsTo
     {
         return $this->belongsTo(Power::class);
     }
+
+    public function phases(): HasMany
+    {
+        return $this->hasMany(Phase::class);
+    }
+
+
+
+    // Query
+    public function currentPhase(array|string $with = null): Phase
+    {
+        $q = $this->phases();
+        if (! is_null($with)) {
+            $q = $q->with($with);
+        }
+
+        return $q->orderByDesc('started_at')->first();
+    }
+
+
 
 
 }

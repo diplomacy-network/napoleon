@@ -22,6 +22,9 @@ namespace App\Models\Play{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $adjudicatable
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Play\Phase[] $phases
+ * @property-read int|null $phases_count
+ * @property-read \App\Models\Play\Variant $variant
  * @property-read \App\Models\Play\Power|null $winningPower
  * @method static \Illuminate\Database\Eloquent\Builder|AdjudicationInstance newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|AdjudicationInstance newQuery()
@@ -43,6 +46,7 @@ namespace App\Models\Play{
  *
  * @property int $id
  * @property int $variant_id
+ * @property string $name
  * @property string|null $color
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -53,6 +57,7 @@ namespace App\Models\Play{
  * @method static \Illuminate\Database\Eloquent\Builder|BasePower whereColor($value)
  * @method static \Illuminate\Database\Eloquent\Builder|BasePower whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|BasePower whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BasePower whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|BasePower whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|BasePower whereVariantId($value)
  */
@@ -66,6 +71,7 @@ namespace App\Models\Play{
  * @property int $id
  * @property int $phase_id
  * @property int $power_id
+ * @property int $is_supply_center
  * @property int $province_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -77,6 +83,7 @@ namespace App\Models\Play{
  * @method static \Illuminate\Database\Eloquent\Builder|Influence query()
  * @method static \Illuminate\Database\Eloquent\Builder|Influence whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Influence whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Influence whereIsSupplyCenter($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Influence wherePhaseId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Influence wherePowerId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Influence whereProvinceId($value)
@@ -285,15 +292,15 @@ namespace App\Models\Play{
  * @property int $adjudication_instance_id
  * @property string $season
  * @property string $year
- * @property string $type
+ * @property \App\Enums\Play\PhaseTypeEnum $type
  * @property \Illuminate\Support\Carbon $started_at
  * @property int|null $length
  * @property bool $adjudicated
- * @property int $next_phase_id
+ * @property int|null $previous_phase_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Play\AdjudicationInstance $adjudicationInstance
- * @property-read Phase $nextPhase
+ * @property-read Phase|null $previousPhase
  * @method static \Illuminate\Database\Eloquent\Builder|Phase current()
  * @method static \Illuminate\Database\Eloquent\Builder|Phase newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Phase newQuery()
@@ -303,7 +310,7 @@ namespace App\Models\Play{
  * @method static \Illuminate\Database\Eloquent\Builder|Phase whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Phase whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Phase whereLength($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Phase whereNextPhaseId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Phase wherePreviousPhaseId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Phase whereSeason($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Phase whereStartedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Phase whereType($value)
@@ -346,7 +353,6 @@ namespace App\Models\Play{
  * @property int $id
  * @property int $variant_id
  * @property string $short_name
- * @property bool $is_supply_center
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Play\Variant $variant
@@ -355,7 +361,6 @@ namespace App\Models\Play{
  * @method static \Illuminate\Database\Eloquent\Builder|Province query()
  * @method static \Illuminate\Database\Eloquent\Builder|Province whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Province whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Province whereIsSupplyCenter($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Province whereShortName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Province whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Province whereVariantId($value)
@@ -447,6 +452,8 @@ namespace App\Models\Play{
  * @property int $scs_to_win
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Play\BasePower[] $basePowers
+ * @property-read int|null $base_powers_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Play\Province[] $provinces
  * @property-read int|null $provinces_count
  * @method static \Illuminate\Database\Eloquent\Builder|Variant newModelQuery()

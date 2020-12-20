@@ -2,9 +2,11 @@
 
 namespace App\Models\Play;
 
+use App\Enums\Play\PhaseTypeEnum;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Phase extends Model
 {
@@ -36,23 +38,25 @@ class Phase extends Model
         'adjudication_instance_id' => 'integer',
         'started_at' => 'datetime',
         'adjudicated' => 'boolean',
-        'next_phase_id' => 'integer',
+        'previous_phase_id' => 'integer',
+        'type' => PhaseTypeEnum::class,
     ];
 
 
     // Relationships
-    public function adjudicationInstance()
+    public function adjudicationInstance(): BelongsTo
     {
-        return $this->belongsTo(\App\Models\Play\AdjudicationInstance::class);
+        return $this->belongsTo(AdjudicationInstance::class);
     }
 
-    public function nextPhase()
+    public function previousPhase(): BelongsTo
     {
-        return $this->belongsTo(\App\Models\Play\Phase::class);
+        return $this->belongsTo(Phase::class);
     }
 
     // Scopes
-    public function scopeCurrent(Builder $query){
+    public function scopeCurrent(Builder $query): Builder
+    {
         return $query->where('next_phase_id', null);
     }
 }
