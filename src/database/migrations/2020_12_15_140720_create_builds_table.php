@@ -19,6 +19,7 @@ class CreateBuildsTable extends Migration
             $table->id();
             $table->enum('type', ["army","fleet"]);
             $table->foreignId('location_id')->constrained('provinces')->cascadeOnDelete();
+            $table->foreignId('phase_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
 

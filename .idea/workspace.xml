@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2ea96f43-9257-4efe-8cc2-d46d861918d2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_ide_helper_models.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/_ide_helper_models.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Actions/Play/Adjudicator/ParseUnitOrdersAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Actions/Play/Adjudicator/ParseUnitOrdersAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Actions/Play/CreateInitialPhaseAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Actions/Play/CreateInitialPhaseAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Models/Play/Orders/Build.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Play/Orders/Build.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140720_create_builds_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2020_12_15_140720_create_builds_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +215,7 @@
       <workItem from="1608379136060" duration="24553000" />
       <workItem from="1608411636233" duration="30320000" />
       <workItem from="1608508440977" duration="5000" />
-      <workItem from="1608508571651" duration="1361000" />
+      <workItem from="1608508571651" duration="2028000" />
     </task>
     <servers />
   </component>

@@ -59,6 +59,7 @@ class ParseUnitOrdersAction
             foreach ($types->Builds ?? [] as $build) {
                 $b = new Build();
                 $b->location_id = $province->id;
+                $b->phase_id = $phase->id;
                 $b->type = UnitTypeEnum::make($build->Type);
                 $b->save();
             }
