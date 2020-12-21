@@ -10,6 +10,17 @@
  */
 
 
+namespace App\Models{
+/**
+ * App\Models\LocationOrders
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|LocationOrders newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|LocationOrders newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|LocationOrders query()
+ */
+	class LocationOrders extends \Eloquent {}
+}
+
 namespace App\Models\Play{
 /**
  * App\Models\Play\AdjudicationInstance
@@ -101,6 +112,8 @@ namespace App\Models\Play\Orders{
  * @property int $id
  * @property string $type
  * @property int $location_id
+ * @property int $phase_id
+ * @property int $power_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Play\Province $location
@@ -110,6 +123,8 @@ namespace App\Models\Play\Orders{
  * @method static \Illuminate\Database\Eloquent\Builder|Build whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Build whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Build whereLocationId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Build wherePhaseId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Build wherePowerId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Build whereType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Build whereUpdatedAt($value)
  */
