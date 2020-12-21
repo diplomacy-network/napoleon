@@ -2,6 +2,7 @@
 
 namespace App\Models\Play\Orders;
 
+use App\Enums\Play\UnitTypeEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -29,6 +30,7 @@ class Build extends Model
         'id' => 'integer',
         'location_id' => 'integer',
         'selected_for_resultion' => 'boolean',
+        'unit_type' => UnitTypeEnum::class,
     ];
 
 

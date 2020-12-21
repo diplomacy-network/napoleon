@@ -101,7 +101,6 @@ namespace App\Models\Play\Orders{
  * @property int $id
  * @property string $type
  * @property int $location_id
- * @property bool $selected_for_resultion
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Play\Province $location
@@ -111,7 +110,6 @@ namespace App\Models\Play\Orders{
  * @method static \Illuminate\Database\Eloquent\Builder|Build whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Build whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Build whereLocationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Build whereSelectedForResultion($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Build whereType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Build whereUpdatedAt($value)
  */
@@ -155,8 +153,6 @@ namespace App\Models\Play\Orders{
  *
  * @property int $id
  * @property int $unit_id
- * @property int $location_id
- * @property bool $selected_for_resultion
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Play\Province $location
@@ -166,8 +162,6 @@ namespace App\Models\Play\Orders{
  * @method static \Illuminate\Database\Eloquent\Builder|Disband query()
  * @method static \Illuminate\Database\Eloquent\Builder|Disband whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Disband whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Disband whereLocationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Disband whereSelectedForResultion($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Disband whereUnitId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Disband whereUpdatedAt($value)
  */
@@ -180,8 +174,6 @@ namespace App\Models\Play\Orders{
  *
  * @property int $id
  * @property int $unit_id
- * @property int $location_id
- * @property bool $selected_for_resultion
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Play\Province $location
@@ -191,8 +183,6 @@ namespace App\Models\Play\Orders{
  * @method static \Illuminate\Database\Eloquent\Builder|Hold query()
  * @method static \Illuminate\Database\Eloquent\Builder|Hold whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Hold whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Hold whereLocationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Hold whereSelectedForResultion($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Hold whereUnitId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Hold whereUpdatedAt($value)
  */
@@ -205,9 +195,7 @@ namespace App\Models\Play\Orders{
  *
  * @property int $id
  * @property int $unit_id
- * @property int $location_id
  * @property int $to_id
- * @property bool $selected_for_resultion
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Play\Province $location
@@ -218,8 +206,6 @@ namespace App\Models\Play\Orders{
  * @method static \Illuminate\Database\Eloquent\Builder|Move query()
  * @method static \Illuminate\Database\Eloquent\Builder|Move whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Move whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Move whereLocationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Move whereSelectedForResultion($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Move whereToId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Move whereUnitId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Move whereUpdatedAt($value)
@@ -233,9 +219,7 @@ namespace App\Models\Play\Orders{
  *
  * @property int $id
  * @property int $unit_id
- * @property int $location_id
  * @property int $to_id
- * @property bool $selected_for_resultion
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Play\Province $location
@@ -246,8 +230,6 @@ namespace App\Models\Play\Orders{
  * @method static \Illuminate\Database\Eloquent\Builder|SupportHold query()
  * @method static \Illuminate\Database\Eloquent\Builder|SupportHold whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|SupportHold whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|SupportHold whereLocationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|SupportHold whereSelectedForResultion($value)
  * @method static \Illuminate\Database\Eloquent\Builder|SupportHold whereToId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|SupportHold whereUnitId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|SupportHold whereUpdatedAt($value)
@@ -261,10 +243,8 @@ namespace App\Models\Play\Orders{
  *
  * @property int $id
  * @property int $unit_id
- * @property int $location_id
  * @property int $from_id
  * @property int $to_id
- * @property bool $selected_for_resultion
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Play\Province $from
@@ -277,8 +257,6 @@ namespace App\Models\Play\Orders{
  * @method static \Illuminate\Database\Eloquent\Builder|SupportMove whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|SupportMove whereFromId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|SupportMove whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|SupportMove whereLocationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|SupportMove whereSelectedForResultion($value)
  * @method static \Illuminate\Database\Eloquent\Builder|SupportMove whereToId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|SupportMove whereUnitId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|SupportMove whereUpdatedAt($value)

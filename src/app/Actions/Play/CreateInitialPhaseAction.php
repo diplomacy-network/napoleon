@@ -6,6 +6,7 @@ namespace App\Actions\Play;
 
 use App\Actions\Play\Adjudicator\ParsePhaseFromDataAction;
 use App\Actions\Play\Adjudicator\ParsePhaseProvinceDataAction;
+use App\Actions\Play\Adjudicator\ParseUnitOrdersAction;
 use App\Actions\Play\Adjudicator\ParseUnitProvinceDataAction;
 use App\Models\Play\AdjudicationInstance;
 use App\Models\Play\Phase;
@@ -27,6 +28,7 @@ class CreateInitialPhaseAction
         $phase = app(ParsePhaseFromDataAction::class)->execute($instance, $init);
         app(ParsePhaseProvinceDataAction::class)->execute($phase, $init);
         app(ParseUnitProvinceDataAction::class)->execute($phase, $init);
+        app(ParseUnitOrdersAction::class)->execute($phase, $init);
         return $phase;
 
 
