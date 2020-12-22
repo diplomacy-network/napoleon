@@ -1,2 +1,79 @@
+created:
+    - database/factories/Playground/PlaygroundFactory.php
+    - database/factories/Playground/BranchFactory.php
+    - database/factories/Play/VariantFactory.php
+    - database/factories/Play/ProvinceFactory.php
+    - database/factories/Play/ProvinceNamesFactory.php
+    - database/factories/Play/BasePowerFactory.php
+    - database/factories/Play/AdjudicationInstanceFactory.php
+    - database/factories/Play/PowerFactory.php
+    - database/factories/Play/PhaseFactory.php
+    - database/factories/Play/UnitFactory.php
+    - database/factories/Play/InfluenceFactory.php
+    - database/factories/Play/Orders/MoveFactory.php
+    - database/factories/Play/Orders/SupportHoldFactory.php
+    - database/factories/Play/Orders/SupportMoveFactory.php
+    - database/factories/Play/Orders/HoldFactory.php
+    - database/factories/Play/Orders/DisbandFactory.php
+    - database/factories/Play/Orders/BuildFactory.php
+    - database/factories/Play/Orders/ConvoyFactory.php
+    - database/factories/Play/TextInstructionFactory.php
+    - database/migrations/2020_12_15_162558_create_playgrounds_table.php
+    - database/migrations/2020_12_15_162559_create_branches_table.php
+    - database/migrations/2020_12_15_162600_create_variants_table.php
+    - database/migrations/2020_12_15_162601_create_provinces_table.php
+    - database/migrations/2020_12_15_162602_create_province_names_table.php
+    - database/migrations/2020_12_15_162603_create_base_powers_table.php
+    - database/migrations/2020_12_15_162604_create_adjudication_instances_table.php
+    - database/migrations/2020_12_15_162605_create_powers_table.php
+    - database/migrations/2020_12_15_162606_create_phases_table.php
+    - database/migrations/2020_12_15_162607_create_units_table.php
+    - database/migrations/2020_12_15_162608_create_influences_table.php
+    - database/migrations/2020_12_15_162609_create_moves_table.php
+    - database/migrations/2020_12_15_162610_create_support_holds_table.php
+    - database/migrations/2020_12_15_162611_create_support_moves_table.php
+    - database/migrations/2020_12_15_162612_create_holds_table.php
+    - database/migrations/2020_12_15_162613_create_disbands_table.php
+    - database/migrations/2020_12_15_162614_create_builds_table.php
+    - database/migrations/2020_12_15_162615_create_convoys_table.php
+    - database/migrations/2020_12_15_162616_create_text_instructions_table.php
+    - app/Models/Playground/Playground.php
+    - app/Models/Playground/Branch.php
+    - app/Models/Play/Variant.php
+    - app/Models/Play/Province.php
+    - app/Models/Play/ProvinceNames.php
+    - app/Models/Play/BasePower.php
+    - app/Models/Play/AdjudicationInstance.php
+    - app/Models/Play/Power.php
+    - app/Models/Play/Phase.php
+    - app/Models/Play/Unit.php
+    - app/Models/Play/Influence.php
+    - app/Models/Play/Orders/Move.php
+    - app/Models/Play/Orders/SupportHold.php
+    - app/Models/Play/Orders/SupportMove.php
+    - app/Models/Play/Orders/Hold.php
+    - app/Models/Play/Orders/Disband.php
+    - app/Models/Play/Orders/Build.php
+    - app/Models/Play/Orders/Convoy.php
+    - app/Models/Play/TextInstruction.php
 models:
     Models\User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, two_factor_secret: 'text nullable', two_factor_recovery_codes: 'text nullable', remember_token: 'string:100 nullable', current_team_id: 'biginteger unsigned nullable', profile_photo_path: 'text nullable', admin: 'boolean default:0' }
+    Playground/Playground: { name: 'string unique', slug: 'string unique', user_id: 'id foreign' }
+    Playground/Branch: { name: string, slug: string, created_from: 'id foreign:phases.id', public: 'boolean default:false' }
+    Play/Variant: { name: 'string unique', adjudication_name: string, scs_to_win: integer }
+    Play/Province: { variant_id: 'id foreign', short_name: string, is_supply_center: 'boolean default:false' }
+    Play/ProvinceNames: { province_id: 'id foreign', long_name: string, language: 'enum:de_DE,en_GB' }
+    Play/BasePower: { variant_id: 'id foreign', color: 'string nullable' }
+    Play/AdjudicationInstance: { adjudicatable_id: id, adjudicatable_type: string, winning_power_id: 'id foreign:powers.id' }
+    Play/Power: { base_power_id: 'id foreign', user_id: 'id foreign nullable', adjudication_instance_id: 'id foreign' }
+    Play/Phase: { adjudication_instance_id: 'id foreign', season: string, year: int, type: string, started_at: datetime, length: 'integer nullable', adjudicated: 'boolean default:false', next_phase_id: 'id foreign:phase' }
+    Play/Unit: { phase_id: 'id foreign', power_id: 'id foreign', province_id: 'id foreign', type: 'enum:army,fleet' }
+    Play/Influence: { phase_id: 'id foreign', power_id: 'id foreign', province_id: 'id foreign' }
+    Play/Orders/Move: { unit_id: 'id foreign', location_id: 'id foreign:provinces.id', to_id: 'id foreign:provinces.id', selected_for_resultion: 'boolean default:false' }
+    Play/Orders/SupportHold: { unit_id: 'id foreign', location_id: 'id foreign:provinces.id', to_id: 'id foreign:provinces.id', selected_for_resultion: 'boolean default:false' }
+    Play/Orders/SupportMove: { unit_id: 'id foreign', location_id: 'id foreign:provinces.id', from_id: 'id foreign:provinces.id', to_id: 'id foreign:provinces.id', selected_for_resultion: 'boolean default:false' }
+    Play/Orders/Hold: { unit_id: 'id foreign', location_id: 'id foreign:provinces.id', selected_for_resultion: 'boolean default:false' }
+    Play/Orders/Disband: { unit_id: 'id foreign', location_id: 'id foreign:provinces.id', selected_for_resultion: 'boolean default:false' }
+    Play/Orders/Build: { type: 'enum:army,fleet', location_id: 'id foreign:provinces.id', selected_for_resultion: 'boolean default:false' }
+    Play/Orders/Convoy: { unit_id: 'id foreign', location_id: 'id foreign:provinces.id', from_id: 'id foreign:provinces.id', to_id: 'id foreign:provinces.id', selected_for_resultion: 'boolean default:false' }
+    Play/TextInstruction: { payload: string, phase_id: 'id foreign' }
