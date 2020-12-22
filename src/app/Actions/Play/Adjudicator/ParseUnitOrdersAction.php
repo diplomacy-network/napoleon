@@ -13,6 +13,7 @@ use App\Models\Play\Orders\Move;
 use App\Models\Play\Orders\SupportHold;
 use App\Models\Play\Orders\SupportMove;
 use App\Models\Play\Phase;
+use App\Models\Play\Unit;
 use Illuminate\Support\Facades\Log;
 use stdClass;
 
@@ -53,10 +54,16 @@ class ParseUnitOrdersAction
                 $c = new Convoy();
                 $c->unit_id = $unit->id;
                 $c->from_id = (clone $provinces)->name($convoy->From)->first()->id;
-                $c->to_id = $province->names($convoy->To)->first()->id;
+                $c->to_id = (clone $provinces)->name($convoy->To)->first()->id;
                 $c->save();
             }
             foreach ($types->Builds ?? [] as $build) {
+                Phase::query()->units()->firstOrCreate([
+                    'phase_id' => $phase->id,
+                    'province_id' => $province->id,
+                    'type' => UnitTypeEnum::BUILDER(),
+                    'power_id' => $phase->provinceInfluencePower($province)?->id,
+                ]);
                 $b = new Build();
                 $b->location_id = $province->id;
                 $b->phase_id = $phase->id;

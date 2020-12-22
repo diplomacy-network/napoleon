@@ -71,7 +71,7 @@ class AdjudicationInstance extends Model
             $q = $q->with($with);
         }
 
-        return $q->orderByDesc('started_at')->first();
+        return $q->orderByDesc('started_at')->firstOrFail();
     }
 
 

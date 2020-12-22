@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Phase extends Model
 {
@@ -59,10 +60,24 @@ class Phase extends Model
         return $this->hasMany(Unit::class);
     }
 
+    public function influences(): HasMany
+    {
+        return $this->hasMany(Influence::class);
+    }
+
+    public function orders(): HasManyThrough
+    {
+        return $this->hasManyThrough(UnitOrder::class, Unit::class);
+    }
+
     // Queries
     public function unitInProvince(Province $p): Unit {
         return $this->units()->whereHas('province', function($q) use ($p){
             $q->where('id', $p->id);
         })->first();
+    }
+
+    public function provinceInfluencePower(Province $p): Power {
+        return $this->influences()->with('power')->where('province_id', $p->id)->first()?->power;
     }
 }

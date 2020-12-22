@@ -2,6 +2,7 @@
 
 namespace App\Enums\Play;
 
+use JetBrains\PhpStorm\ArrayShape;
 use Spatie\Enum\Laravel\Enum;
 
 /**
@@ -14,4 +15,12 @@ use Spatie\Enum\Laravel\Enum;
  */
 final class PhaseTypeEnum extends Enum
 {
+    protected static function values(): array
+    {
+        return [
+            "MOVEMENT" => "Movement",
+            "RETREAT" => "Retreat",
+            "ADJUSTMENT" => "Adjustment",
+        ];
+    }
 }

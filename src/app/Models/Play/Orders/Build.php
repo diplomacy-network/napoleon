@@ -3,10 +3,16 @@
 namespace App\Models\Play\Orders;
 
 use App\Enums\Play\UnitTypeEnum;
+use App\Models\Contracts\OrderableInterface;
+use App\Models\Play\Province;
+use App\Models\Play\UnitOrder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
+use stdClass;
 
-class Build extends Model
+class Build extends Model implements OrderableInterface
 {
     use HasFactory;
 
@@ -34,8 +40,29 @@ class Build extends Model
     ];
 
 
-    public function location()
+    public function unit(): BelongsTo
     {
-        return $this->belongsTo(\App\Models\Play\Province::class);
+        return $this->belongsTo(Province::class);
+    }
+
+    public function unitOrder(): MorphOne
+    {
+        return $this->morphOne(UnitOrder::class, 'orderable');
+    }
+
+    public function toOrderRequestDTO(): array
+    {
+        return  [
+            $this->unit->province->short_name =>[
+                "Type" => "Build",
+                "Payload" => [
+                    "Location" => $this->unit->province->short_name,
+                    "From" => null,
+                    "To" => null,
+                    "Convoy" => null,
+                    "Unit" => $this->type,
+                ],
+            ]
+        ];
     }
 }

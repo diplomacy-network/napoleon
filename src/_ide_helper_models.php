@@ -10,17 +10,6 @@
  */
 
 
-namespace App\Models{
-/**
- * App\Models\LocationOrders
- *
- * @method static \Illuminate\Database\Eloquent\Builder|LocationOrders newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|LocationOrders newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|LocationOrders query()
- */
-	class LocationOrders extends \Eloquent {}
-}
-
 namespace App\Models\Play{
 /**
  * App\Models\Play\AdjudicationInstance
@@ -110,25 +99,22 @@ namespace App\Models\Play\Orders{
  * App\Models\Play\Orders\Build
  *
  * @property int $id
+ * @property int $unit_id
  * @property string $type
- * @property int $location_id
- * @property int $phase_id
- * @property int $power_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Play\Province $location
+ * @property-read \App\Models\Play\UnitOrder|null $unitOrder
  * @method static \Illuminate\Database\Eloquent\Builder|Build newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Build newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Build query()
  * @method static \Illuminate\Database\Eloquent\Builder|Build whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Build whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Build whereLocationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Build wherePhaseId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Build wherePowerId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Build whereType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Build whereUnitId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Build whereUpdatedAt($value)
  */
-	class Build extends \Eloquent {}
+	class Build extends \Eloquent implements \App\Models\Contracts\OrderableInterface {}
 }
 
 namespace App\Models\Play\Orders{
@@ -147,6 +133,7 @@ namespace App\Models\Play\Orders{
  * @property-read \App\Models\Play\Province $location
  * @property-read \App\Models\Play\Province $to
  * @property-read \App\Models\Play\Unit $unit
+ * @property-read \App\Models\Play\UnitOrder|null $unitOrder
  * @method static \Illuminate\Database\Eloquent\Builder|Convoy newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Convoy newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Convoy query()
@@ -159,7 +146,7 @@ namespace App\Models\Play\Orders{
  * @method static \Illuminate\Database\Eloquent\Builder|Convoy whereUnitId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Convoy whereUpdatedAt($value)
  */
-	class Convoy extends \Eloquent {}
+	class Convoy extends \Eloquent implements \App\Models\Contracts\OrderableInterface {}
 }
 
 namespace App\Models\Play\Orders{
@@ -172,6 +159,7 @@ namespace App\Models\Play\Orders{
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Play\Province $location
  * @property-read \App\Models\Play\Unit $unit
+ * @property-read \App\Models\Play\UnitOrder|null $unitOrder
  * @method static \Illuminate\Database\Eloquent\Builder|Disband newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Disband newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Disband query()
@@ -180,7 +168,7 @@ namespace App\Models\Play\Orders{
  * @method static \Illuminate\Database\Eloquent\Builder|Disband whereUnitId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Disband whereUpdatedAt($value)
  */
-	class Disband extends \Eloquent {}
+	class Disband extends \Eloquent implements \App\Models\Contracts\OrderableInterface {}
 }
 
 namespace App\Models\Play\Orders{
@@ -193,6 +181,7 @@ namespace App\Models\Play\Orders{
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Play\Province $location
  * @property-read \App\Models\Play\Unit $unit
+ * @property-read \App\Models\Play\UnitOrder|null $unitOrder
  * @method static \Illuminate\Database\Eloquent\Builder|Hold newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Hold newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Hold query()
@@ -201,7 +190,7 @@ namespace App\Models\Play\Orders{
  * @method static \Illuminate\Database\Eloquent\Builder|Hold whereUnitId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Hold whereUpdatedAt($value)
  */
-	class Hold extends \Eloquent {}
+	class Hold extends \Eloquent implements \App\Models\Contracts\OrderableInterface {}
 }
 
 namespace App\Models\Play\Orders{
@@ -216,6 +205,7 @@ namespace App\Models\Play\Orders{
  * @property-read \App\Models\Play\Province $location
  * @property-read \App\Models\Play\Province $to
  * @property-read \App\Models\Play\Unit $unit
+ * @property-read \App\Models\Play\UnitOrder|null $unitOrder
  * @method static \Illuminate\Database\Eloquent\Builder|Move newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Move newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Move query()
@@ -225,7 +215,7 @@ namespace App\Models\Play\Orders{
  * @method static \Illuminate\Database\Eloquent\Builder|Move whereUnitId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Move whereUpdatedAt($value)
  */
-	class Move extends \Eloquent {}
+	class Move extends \Eloquent implements \App\Models\Contracts\OrderableInterface {}
 }
 
 namespace App\Models\Play\Orders{
@@ -240,6 +230,7 @@ namespace App\Models\Play\Orders{
  * @property-read \App\Models\Play\Province $location
  * @property-read \App\Models\Play\Province $to
  * @property-read \App\Models\Play\Unit $unit
+ * @property-read \App\Models\Play\UnitOrder|null $unitOrder
  * @method static \Illuminate\Database\Eloquent\Builder|SupportHold newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|SupportHold newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|SupportHold query()
@@ -249,7 +240,7 @@ namespace App\Models\Play\Orders{
  * @method static \Illuminate\Database\Eloquent\Builder|SupportHold whereUnitId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|SupportHold whereUpdatedAt($value)
  */
-	class SupportHold extends \Eloquent {}
+	class SupportHold extends \Eloquent implements \App\Models\Contracts\OrderableInterface {}
 }
 
 namespace App\Models\Play\Orders{
@@ -266,6 +257,7 @@ namespace App\Models\Play\Orders{
  * @property-read \App\Models\Play\Province $location
  * @property-read \App\Models\Play\Province $to
  * @property-read \App\Models\Play\Unit $unit
+ * @property-read \App\Models\Play\UnitOrder|null $unitOrder
  * @method static \Illuminate\Database\Eloquent\Builder|SupportMove newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|SupportMove newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|SupportMove query()
@@ -276,7 +268,7 @@ namespace App\Models\Play\Orders{
  * @method static \Illuminate\Database\Eloquent\Builder|SupportMove whereUnitId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|SupportMove whereUpdatedAt($value)
  */
-	class SupportMove extends \Eloquent {}
+	class SupportMove extends \Eloquent implements \App\Models\Contracts\OrderableInterface {}
 }
 
 namespace App\Models\Play{
@@ -295,6 +287,10 @@ namespace App\Models\Play{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Play\AdjudicationInstance $adjudicationInstance
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Play\Influence[] $influences
+ * @property-read int|null $influences_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Play\UnitOrder[] $orders
+ * @property-read int|null $orders_count
  * @property-read Phase|null $previousPhase
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Play\Unit[] $units
  * @property-read int|null $units_count
@@ -423,9 +419,22 @@ namespace App\Models\Play{
  * @property \App\Enums\Play\UnitTypeEnum $type
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Play\Orders\Build[] $builds
+ * @property-read int|null $builds_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Play\Orders\Convoy[] $convoys
+ * @property-read int|null $convoys_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Play\Orders\Disband[] $disband
+ * @property-read int|null $disband_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Play\Orders\Move[] $moves
+ * @property-read int|null $moves_count
  * @property-read \App\Models\Play\Phase $phase
  * @property-read \App\Models\Play\Power $power
  * @property-read \App\Models\Play\Province $province
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Play\Orders\SupportHold[] $supportHolds
+ * @property-read int|null $support_holds_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Play\Orders\SupportMove[] $supportMoves
+ * @property-read int|null $support_moves_count
+ * @property-read \App\Models\Play\UnitOrder|null $unitOrder
  * @method static \Illuminate\Database\Eloquent\Builder|Unit newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Unit newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Unit query()
@@ -438,6 +447,31 @@ namespace App\Models\Play{
  * @method static \Illuminate\Database\Eloquent\Builder|Unit whereUpdatedAt($value)
  */
 	class Unit extends \Eloquent {}
+}
+
+namespace App\Models\Play{
+/**
+ * App\Models\Play\UnitOrder
+ *
+ * @property int $id
+ * @property int $unit_id
+ * @property int $orderable_id
+ * @property string $orderable_type
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $orderable
+ * @property-read \App\Models\Play\Unit|null $unit
+ * @method static \Illuminate\Database\Eloquent\Builder|UnitOrder newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|UnitOrder newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|UnitOrder query()
+ * @method static \Illuminate\Database\Eloquent\Builder|UnitOrder whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UnitOrder whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UnitOrder whereOrderableId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UnitOrder whereOrderableType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UnitOrder whereUnitId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UnitOrder whereUpdatedAt($value)
+ */
+	class UnitOrder extends \Eloquent {}
 }
 
 namespace App\Models\Play{

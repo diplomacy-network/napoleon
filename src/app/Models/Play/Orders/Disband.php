@@ -2,10 +2,14 @@
 
 namespace App\Models\Play\Orders;
 
+use App\Models\Contracts\OrderableInterface;
+use App\Models\Play\UnitOrder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
+use stdClass;
 
-class Disband extends Model
+class Disband extends Model implements OrderableInterface
 {
     use HasFactory;
 
@@ -38,8 +42,24 @@ class Disband extends Model
         return $this->belongsTo(\App\Models\Play\Unit::class);
     }
 
-    public function location()
+    public function unitOrder(): MorphOne
     {
-        return $this->belongsTo(\App\Models\Play\Province::class);
+        return $this->morphOne(UnitOrder::class, 'orderable');
+    }
+
+    public function toOrderRequestDTO(): array
+    {
+        return [
+            $this->unit->province->short_name => [
+                "Type" => "Disband",
+                "Payload" => [
+                    "Location" => $this->unit->province->short_name,
+                    "From" => null,
+                    "To" => null,
+                    "Convoy" => null,
+                    "Unit" => null,
+                ],
+            ]
+        ];
     }
 }

@@ -20,17 +20,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4304c35f-163a-4b92-a2a7-3704a6925aa8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/.phpstorm.meta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Actions/Play/AdvanceInstanceAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/AdvanceInstanceWithRandomOrdersCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Contracts/OrderableInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Utility/Adjudicator/exampleRequest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/CreateRandomGameSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/src.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/src.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_ide_helper_models.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper_models.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/Playground/CreatePlaygroundAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Playground/CreatePlaygroundAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/Play/Adjudicator/ParsePhaseFromDataAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Play/Adjudicator/ParsePhaseFromDataAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/Play/Adjudicator/ParseUnitOrdersAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Play/Adjudicator/ParseUnitOrdersAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Enums/Play/PhaseTypeEnum.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enums/Play/PhaseTypeEnum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Enums/Play/UnitTypeEnum.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enums/Play/UnitTypeEnum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Play/AdjudicationInstance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/AdjudicationInstance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Play/LocationOrders.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Play/Orders/Build.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/Orders/Build.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Play/Orders/Convoy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/Orders/Convoy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Play/Orders/Disband.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/Orders/Disband.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Play/Orders/Hold.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/Orders/Hold.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Play/Orders/Move.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/Orders/Move.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Play/Orders/SupportHold.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/Orders/SupportHold.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Play/Orders/SupportMove.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/Orders/SupportMove.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Play/Phase.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/Phase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Play/Unit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/Unit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Utility/Adjudicator/AdjudicatorInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Utility/Adjudicator/AdjudicatorInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Utility/Adjudicator/CliAdjudicator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Utility/Adjudicator/CliAdjudicator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_140712_create_phases_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_140712_create_phases_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_140713_create_units_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_140713_create_units_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_140720_create_builds_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_140720_create_builds_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_21_013449_create_location_orders_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -175,18 +203,32 @@
       <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
       <path value="$PROJECT_DIR$/vendor/psr/http-client" />
       <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-enum" />
+      <path value="$PROJECT_DIR$/vendor/spatie/enum" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ls9yn9KRdGQiernF3T2ren8jRq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Code\DNW\napoleon\src\app\Models\Play" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -203,6 +245,10 @@
       <option name="presentableId" value="Default" />
       <updated>1608375193260</updated>
       <workItem from="1608375194378" duration="98000" />
+      <workItem from="1608554270621" duration="3510000" />
+      <workItem from="1608571620750" duration="3623000" />
+      <workItem from="1608628585177" duration="4422000" />
+      <workItem from="1608667524092" duration="7357000" />
     </task>
     <servers />
   </component>
@@ -219,5 +265,9 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

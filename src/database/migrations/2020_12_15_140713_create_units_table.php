@@ -20,7 +20,7 @@ class CreateUnitsTable extends Migration
             $table->foreignId('phase_id')->constrained()->cascadeOnDelete();
             $table->foreignId('power_id')->constrained()->cascadeOnDelete();
             $table->foreignId('province_id')->constrained()->cascadeOnDelete();
-            $table->enum('type', ["ARMY", "FLEET"]);
+            $table->enum('type', ["Army", "Fleet", "Builder"]);
             $table->timestamps();
         });
 
