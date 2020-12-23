@@ -20,38 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4304c35f-163a-4b92-a2a7-3704a6925aa8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Actions/Play/AdvanceInstanceAction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Console/Commands/AdvanceInstanceWithRandomOrdersCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Contracts/OrderableInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Utility/Adjudicator/exampleRequest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/CreateRandomGameSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/src.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/OrderTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_ide_helper_models.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper_models.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/Play/Adjudicator/ParsePhaseFromDataAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Play/Adjudicator/ParsePhaseFromDataAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/Play/Adjudicator/ParseUnitOrdersAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Play/Adjudicator/ParseUnitOrdersAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Enums/Play/PhaseTypeEnum.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enums/Play/PhaseTypeEnum.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Enums/Play/UnitTypeEnum.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enums/Play/UnitTypeEnum.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Play/AdjudicationInstance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/AdjudicationInstance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Play/LocationOrders.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Play/Orders/Build.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/Orders/Build.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Play/Orders/Convoy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/Orders/Convoy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Play/Orders/Disband.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/Orders/Disband.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Play/Orders/Hold.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/Orders/Hold.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Play/Orders/Move.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/Orders/Move.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Play/Orders/SupportHold.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/Orders/SupportHold.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Play/Orders/SupportMove.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/Orders/SupportMove.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Play/Phase.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/Phase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Play/Unit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/Unit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Utility/Adjudicator/AdjudicatorInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Utility/Adjudicator/AdjudicatorInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Utility/Adjudicator/CliAdjudicator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Utility/Adjudicator/CliAdjudicator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_140712_create_phases_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_140712_create_phases_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_140713_create_units_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_140713_create_units_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_140720_create_builds_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_140720_create_builds_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_21_013449_create_location_orders_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,6 +219,7 @@
       <workItem from="1608571620750" duration="3623000" />
       <workItem from="1608628585177" duration="4422000" />
       <workItem from="1608667524092" duration="7357000" />
+      <workItem from="1608740884812" duration="1325000" />
     </task>
     <servers />
   </component>
