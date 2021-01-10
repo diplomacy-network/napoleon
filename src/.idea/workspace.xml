@@ -20,8 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4304c35f-163a-4b92-a2a7-3704a6925aa8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/Feature/OrderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Utility/OrderParser/OrderParserInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Utility/OrderParser/ShortOrderParser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/src.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/src.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/.phpstorm.meta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_ide_helper_models.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper_models.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Play/UnitOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Play/UnitOrder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/OrderTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/OrderTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +185,7 @@
       <path value="$PROJECT_DIR$/vendor/psr/container" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-enum" />
       <path value="$PROJECT_DIR$/vendor/spatie/enum" />
+      <path value="$PROJECT_DIR$/vendor/lorisleiva/laravel-actions" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ls9yn9KRdGQiernF3T2ren8jRq" />
@@ -219,7 +230,11 @@
       <workItem from="1608571620750" duration="3623000" />
       <workItem from="1608628585177" duration="4422000" />
       <workItem from="1608667524092" duration="7357000" />
-      <workItem from="1608740884812" duration="1325000" />
+      <workItem from="1608740884812" duration="1449000" />
+      <workItem from="1608742362929" duration="199000" />
+      <workItem from="1608742578076" duration="2803000" />
+      <workItem from="1608922723186" duration="2645000" />
+      <workItem from="1608990564068" duration="1095000" />
     </task>
     <servers />
   </component>

@@ -11,6 +11,12 @@ class UnitOrder extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'unit_id',
+        'orderable_type',
+        'orderable_id',
+    ];
+
     public function unit(): HasOne
     {
         return $this->hasOne(Unit::class);

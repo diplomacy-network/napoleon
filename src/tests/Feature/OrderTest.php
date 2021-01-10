@@ -13,8 +13,6 @@ use App\Models\Play\UnitOrder;
 use App\Models\Play\Variant;
 use App\Models\Playground\Branch;
 use Database\Seeders\DatabaseSeeder;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
 
@@ -23,6 +21,7 @@ class OrderTest extends TestCase
     public AdjudicationInstance $instance;
 
     public function setUp(): void {
+        parent::setUp();
         Artisan::call("migrate:fresh --env=testing");
         $this->seed(DatabaseSeeder::class);
         $variant = Variant::where('adjudication_name', 'Classical')->firstOrFail();
@@ -43,9 +42,16 @@ class OrderTest extends TestCase
             'orderable_id' => $move->id,
             'orderable_type' => $move::class,
         ]);
-        app(AdvanceInstanceAction::class)->execute($this->instance);
-
+        $phase = app(AdvanceInstanceAction::class)->execute($this->instance);
+        $this->assertDatabaseHas('units', [
+            'phase_id' => $phase->id,
+            'power_id' => $unit->power_id,
+            'province_id' => $target->id,
+            'type' => $unit->type->value,
+        ]);
     }
+
+
 
     private function getProvince(Phase $phase, string $name): Province {
         return $phase->adjudicationInstance->variant->provinces()->where('short_name', $name)->firstOrFail();

@@ -103,7 +103,7 @@ namespace App\Models\Play\Orders{
  * @property string $type
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Play\Province $location
+ * @property-read \App\Models\Play\Province $unit
  * @property-read \App\Models\Play\UnitOrder|null $unitOrder
  * @method static \Illuminate\Database\Eloquent\Builder|Build newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Build newQuery()
@@ -123,14 +123,11 @@ namespace App\Models\Play\Orders{
  *
  * @property int $id
  * @property int $unit_id
- * @property int $location_id
  * @property int $from_id
  * @property int $to_id
- * @property bool $selected_for_resultion
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Play\Province $from
- * @property-read \App\Models\Play\Province $location
  * @property-read \App\Models\Play\Province $to
  * @property-read \App\Models\Play\Unit $unit
  * @property-read \App\Models\Play\UnitOrder|null $unitOrder
@@ -140,8 +137,6 @@ namespace App\Models\Play\Orders{
  * @method static \Illuminate\Database\Eloquent\Builder|Convoy whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Convoy whereFromId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Convoy whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Convoy whereLocationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Convoy whereSelectedForResultion($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Convoy whereToId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Convoy whereUnitId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Convoy whereUpdatedAt($value)
@@ -157,7 +152,6 @@ namespace App\Models\Play\Orders{
  * @property int $unit_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Play\Province $location
  * @property-read \App\Models\Play\Unit $unit
  * @property-read \App\Models\Play\UnitOrder|null $unitOrder
  * @method static \Illuminate\Database\Eloquent\Builder|Disband newModelQuery()
@@ -179,7 +173,6 @@ namespace App\Models\Play\Orders{
  * @property int $unit_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Play\Province $location
  * @property-read \App\Models\Play\Unit $unit
  * @property-read \App\Models\Play\UnitOrder|null $unitOrder
  * @method static \Illuminate\Database\Eloquent\Builder|Hold newModelQuery()
@@ -202,7 +195,6 @@ namespace App\Models\Play\Orders{
  * @property int $to_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Play\Province $location
  * @property-read \App\Models\Play\Province $to
  * @property-read \App\Models\Play\Unit $unit
  * @property-read \App\Models\Play\UnitOrder|null $unitOrder
@@ -227,7 +219,6 @@ namespace App\Models\Play\Orders{
  * @property int $to_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Play\Province $location
  * @property-read \App\Models\Play\Province $to
  * @property-read \App\Models\Play\Unit $unit
  * @property-read \App\Models\Play\UnitOrder|null $unitOrder
@@ -254,7 +245,6 @@ namespace App\Models\Play\Orders{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\Play\Province $from
- * @property-read \App\Models\Play\Province $location
  * @property-read \App\Models\Play\Province $to
  * @property-read \App\Models\Play\Unit $unit
  * @property-read \App\Models\Play\UnitOrder|null $unitOrder

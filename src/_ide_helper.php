@@ -2674,6 +2674,16 @@
      */ 
         class Bus {
                     /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function dispatchNow($command, $handler = null)
+        {
+                        /** @var \Lorisleiva\Actions\BusDispatcher $instance */
+                        return $instance->dispatchNow($command, $handler);
+        }
+                    /**
          * Dispatch a command to its appropriate handler.
          *
          * @param mixed $command
@@ -2681,8 +2691,8 @@
          * @static 
          */ 
         public static function dispatch($command)
-        {
-                        /** @var \Illuminate\Bus\Dispatcher $instance */
+        {            //Method inherited from \Illuminate\Bus\Dispatcher         
+                        /** @var \Lorisleiva\Actions\BusDispatcher $instance */
                         return $instance->dispatch($command);
         }
                     /**
@@ -2696,22 +2706,9 @@
          * @static 
          */ 
         public static function dispatchSync($command, $handler = null)
-        {
-                        /** @var \Illuminate\Bus\Dispatcher $instance */
+        {            //Method inherited from \Illuminate\Bus\Dispatcher         
+                        /** @var \Lorisleiva\Actions\BusDispatcher $instance */
                         return $instance->dispatchSync($command, $handler);
-        }
-                    /**
-         * Dispatch a command to its appropriate handler in the current process without using the synchronous queue.
-         *
-         * @param mixed $command
-         * @param mixed $handler
-         * @return mixed 
-         * @static 
-         */ 
-        public static function dispatchNow($command, $handler = null)
-        {
-                        /** @var \Illuminate\Bus\Dispatcher $instance */
-                        return $instance->dispatchNow($command, $handler);
         }
                     /**
          * Attempt to find the batch with the given ID.
@@ -2721,8 +2718,8 @@
          * @static 
          */ 
         public static function findBatch($batchId)
-        {
-                        /** @var \Illuminate\Bus\Dispatcher $instance */
+        {            //Method inherited from \Illuminate\Bus\Dispatcher         
+                        /** @var \Lorisleiva\Actions\BusDispatcher $instance */
                         return $instance->findBatch($batchId);
         }
                     /**
@@ -2733,8 +2730,8 @@
          * @static 
          */ 
         public static function batch($jobs)
-        {
-                        /** @var \Illuminate\Bus\Dispatcher $instance */
+        {            //Method inherited from \Illuminate\Bus\Dispatcher         
+                        /** @var \Lorisleiva\Actions\BusDispatcher $instance */
                         return $instance->batch($jobs);
         }
                     /**
@@ -2745,8 +2742,8 @@
          * @static 
          */ 
         public static function chain($jobs)
-        {
-                        /** @var \Illuminate\Bus\Dispatcher $instance */
+        {            //Method inherited from \Illuminate\Bus\Dispatcher         
+                        /** @var \Lorisleiva\Actions\BusDispatcher $instance */
                         return $instance->chain($jobs);
         }
                     /**
@@ -2757,8 +2754,8 @@
          * @static 
          */ 
         public static function hasCommandHandler($command)
-        {
-                        /** @var \Illuminate\Bus\Dispatcher $instance */
+        {            //Method inherited from \Illuminate\Bus\Dispatcher         
+                        /** @var \Lorisleiva\Actions\BusDispatcher $instance */
                         return $instance->hasCommandHandler($command);
         }
                     /**
@@ -2769,8 +2766,8 @@
          * @static 
          */ 
         public static function getCommandHandler($command)
-        {
-                        /** @var \Illuminate\Bus\Dispatcher $instance */
+        {            //Method inherited from \Illuminate\Bus\Dispatcher         
+                        /** @var \Lorisleiva\Actions\BusDispatcher $instance */
                         return $instance->getCommandHandler($command);
         }
                     /**
@@ -2781,8 +2778,8 @@
          * @static 
          */ 
         public static function dispatchToQueue($command)
-        {
-                        /** @var \Illuminate\Bus\Dispatcher $instance */
+        {            //Method inherited from \Illuminate\Bus\Dispatcher         
+                        /** @var \Lorisleiva\Actions\BusDispatcher $instance */
                         return $instance->dispatchToQueue($command);
         }
                     /**
@@ -2794,32 +2791,32 @@
          * @static 
          */ 
         public static function dispatchAfterResponse($command, $handler = null)
-        {
-                        /** @var \Illuminate\Bus\Dispatcher $instance */
+        {            //Method inherited from \Illuminate\Bus\Dispatcher         
+                        /** @var \Lorisleiva\Actions\BusDispatcher $instance */
                         $instance->dispatchAfterResponse($command, $handler);
         }
                     /**
          * Set the pipes through which commands should be piped before dispatching.
          *
          * @param array $pipes
-         * @return \Illuminate\Bus\Dispatcher 
+         * @return \Lorisleiva\Actions\BusDispatcher 
          * @static 
          */ 
         public static function pipeThrough($pipes)
-        {
-                        /** @var \Illuminate\Bus\Dispatcher $instance */
+        {            //Method inherited from \Illuminate\Bus\Dispatcher         
+                        /** @var \Lorisleiva\Actions\BusDispatcher $instance */
                         return $instance->pipeThrough($pipes);
         }
                     /**
          * Map a command to a handler.
          *
          * @param array $map
-         * @return \Illuminate\Bus\Dispatcher 
+         * @return \Lorisleiva\Actions\BusDispatcher 
          * @static 
          */ 
         public static function map($map)
-        {
-                        /** @var \Illuminate\Bus\Dispatcher $instance */
+        {            //Method inherited from \Illuminate\Bus\Dispatcher         
+                        /** @var \Lorisleiva\Actions\BusDispatcher $instance */
                         return $instance->map($map);
         }
                     /**
@@ -5043,218 +5040,112 @@
             /**
      * 
      *
+     * @method static \Closure createClassListener(string $listener, bool $wildcard = false)
+     * @method static \Closure makeListener(\Closure|string $listener, bool $wildcard = false)
+     * @method static \Illuminate\Events\Dispatcher setQueueResolver(callable $resolver)
+     * @method static array getListeners(string $eventName)
      * @see \Illuminate\Events\Dispatcher
      */ 
         class Event {
                     /**
-         * Register an event listener with the dispatcher.
+         * 
          *
-         * @param \Closure|string|array $events
-         * @param \Closure|string|null $listener
-         * @return void 
          * @static 
          */ 
         public static function listen($events, $listener = null)
         {
-                        /** @var \Illuminate\Events\Dispatcher $instance */
-                        $instance->listen($events, $listener);
+                        /** @var \Lorisleiva\Actions\EventDispatcherDecorator $instance */
+                        return $instance->listen($events, $listener);
         }
                     /**
-         * Determine if a given event has listeners.
+         * 
          *
-         * @param string $eventName
-         * @return bool 
+         * @static 
+         */ 
+        public static function isActionFullyQualifiedName($listener)
+        {
+                        /** @var \Lorisleiva\Actions\EventDispatcherDecorator $instance */
+                        return $instance->isActionFullyQualifiedName($listener);
+        }
+                    /**
+         * 
+         *
          * @static 
          */ 
         public static function hasListeners($eventName)
         {
-                        /** @var \Illuminate\Events\Dispatcher $instance */
+                        /** @var \Lorisleiva\Actions\EventDispatcherDecorator $instance */
                         return $instance->hasListeners($eventName);
         }
                     /**
-         * Determine if the given event has any wildcard listeners.
+         * 
          *
-         * @param string $eventName
-         * @return bool 
-         * @static 
-         */ 
-        public static function hasWildcardListeners($eventName)
-        {
-                        /** @var \Illuminate\Events\Dispatcher $instance */
-                        return $instance->hasWildcardListeners($eventName);
-        }
-                    /**
-         * Register an event and payload to be fired later.
-         *
-         * @param string $event
-         * @param array $payload
-         * @return void 
-         * @static 
-         */ 
-        public static function push($event, $payload = [])
-        {
-                        /** @var \Illuminate\Events\Dispatcher $instance */
-                        $instance->push($event, $payload);
-        }
-                    /**
-         * Flush a set of pushed events.
-         *
-         * @param string $event
-         * @return void 
-         * @static 
-         */ 
-        public static function flush($event)
-        {
-                        /** @var \Illuminate\Events\Dispatcher $instance */
-                        $instance->flush($event);
-        }
-                    /**
-         * Register an event subscriber with the dispatcher.
-         *
-         * @param object|string $subscriber
-         * @return void 
          * @static 
          */ 
         public static function subscribe($subscriber)
         {
-                        /** @var \Illuminate\Events\Dispatcher $instance */
-                        $instance->subscribe($subscriber);
+                        /** @var \Lorisleiva\Actions\EventDispatcherDecorator $instance */
+                        return $instance->subscribe($subscriber);
         }
                     /**
-         * Fire an event until the first non-null response is returned.
+         * 
          *
-         * @param string|object $event
-         * @param mixed $payload
-         * @return array|null 
          * @static 
          */ 
         public static function until($event, $payload = [])
         {
-                        /** @var \Illuminate\Events\Dispatcher $instance */
+                        /** @var \Lorisleiva\Actions\EventDispatcherDecorator $instance */
                         return $instance->until($event, $payload);
         }
                     /**
-         * Fire an event and call the listeners.
+         * 
          *
-         * @param string|object $event
-         * @param mixed $payload
-         * @param bool $halt
-         * @return array|null 
          * @static 
          */ 
         public static function dispatch($event, $payload = [], $halt = false)
         {
-                        /** @var \Illuminate\Events\Dispatcher $instance */
+                        /** @var \Lorisleiva\Actions\EventDispatcherDecorator $instance */
                         return $instance->dispatch($event, $payload, $halt);
         }
                     /**
-         * Get all of the listeners for a given event name.
+         * 
          *
-         * @param string $eventName
-         * @return array 
          * @static 
          */ 
-        public static function getListeners($eventName)
+        public static function push($event, $payload = [])
         {
-                        /** @var \Illuminate\Events\Dispatcher $instance */
-                        return $instance->getListeners($eventName);
+                        /** @var \Lorisleiva\Actions\EventDispatcherDecorator $instance */
+                        return $instance->push($event, $payload);
         }
                     /**
-         * Register an event listener with the dispatcher.
+         * 
          *
-         * @param \Closure|string $listener
-         * @param bool $wildcard
-         * @return \Closure 
          * @static 
          */ 
-        public static function makeListener($listener, $wildcard = false)
+        public static function flush($event)
         {
-                        /** @var \Illuminate\Events\Dispatcher $instance */
-                        return $instance->makeListener($listener, $wildcard);
+                        /** @var \Lorisleiva\Actions\EventDispatcherDecorator $instance */
+                        return $instance->flush($event);
         }
                     /**
-         * Create a class based listener using the IoC container.
+         * 
          *
-         * @param string $listener
-         * @param bool $wildcard
-         * @return \Closure 
-         * @static 
-         */ 
-        public static function createClassListener($listener, $wildcard = false)
-        {
-                        /** @var \Illuminate\Events\Dispatcher $instance */
-                        return $instance->createClassListener($listener, $wildcard);
-        }
-                    /**
-         * Remove a set of listeners from the dispatcher.
-         *
-         * @param string $event
-         * @return void 
          * @static 
          */ 
         public static function forget($event)
         {
-                        /** @var \Illuminate\Events\Dispatcher $instance */
-                        $instance->forget($event);
+                        /** @var \Lorisleiva\Actions\EventDispatcherDecorator $instance */
+                        return $instance->forget($event);
         }
                     /**
-         * Forget all of the pushed listeners.
+         * 
          *
-         * @return void 
          * @static 
          */ 
         public static function forgetPushed()
         {
-                        /** @var \Illuminate\Events\Dispatcher $instance */
-                        $instance->forgetPushed();
-        }
-                    /**
-         * Set the queue resolver implementation.
-         *
-         * @param callable $resolver
-         * @return \Illuminate\Events\Dispatcher 
-         * @static 
-         */ 
-        public static function setQueueResolver($resolver)
-        {
-                        /** @var \Illuminate\Events\Dispatcher $instance */
-                        return $instance->setQueueResolver($resolver);
-        }
-                    /**
-         * Register a custom macro.
-         *
-         * @param string $name
-         * @param object|callable $macro
-         * @return void 
-         * @static 
-         */ 
-        public static function macro($name, $macro)
-        {
-                        \Illuminate\Events\Dispatcher::macro($name, $macro);
-        }
-                    /**
-         * Mix another object into the class.
-         *
-         * @param object $mixin
-         * @param bool $replace
-         * @return void 
-         * @throws \ReflectionException
-         * @static 
-         */ 
-        public static function mixin($mixin, $replace = true)
-        {
-                        \Illuminate\Events\Dispatcher::mixin($mixin, $replace);
-        }
-                    /**
-         * Checks if macro is registered.
-         *
-         * @param string $name
-         * @return bool 
-         * @static 
-         */ 
-        public static function hasMacro($name)
-        {
-                        return \Illuminate\Events\Dispatcher::hasMacro($name);
+                        /** @var \Lorisleiva\Actions\EventDispatcherDecorator $instance */
+                        return $instance->forgetPushed();
         }
                     /**
          * Assert if an event was dispatched based on a truth-test callback.
@@ -11540,6 +11431,17 @@
                         /** @var \Illuminate\Routing\Router $instance */
                         return $instance->macroCall($method, $parameters);
         }
+                    /**
+         * 
+         *
+         * @see \Lorisleiva\Actions\ActionServiceProvider::boot()
+         * @param mixed $group
+         * @static 
+         */ 
+        public static function actions($group)
+        {
+                        return \Illuminate\Routing\Router::actions($group);
+        }
          
     }
             /**
@@ -16057,6 +15959,98 @@
      
 }
 
+    namespace Lorisleiva\Actions\Facades { 
+            /**
+     * 
+     *
+     */ 
+        class Actions {
+                    /**
+         * Define the paths to use when registering actions.
+         *
+         * @param array|string $paths
+         * @return \Lorisleiva\Actions\ActionManager 
+         * @static 
+         */ 
+        public static function paths($paths)
+        {
+                        /** @var \Lorisleiva\Actions\ActionManager $instance */
+                        return $instance->paths($paths);
+        }
+                    /**
+         * Forbid the action manager to register any actions automatically.
+         *
+         * @return \Lorisleiva\Actions\ActionManager 
+         * @static 
+         */ 
+        public static function dontRegister()
+        {
+                        /** @var \Lorisleiva\Actions\ActionManager $instance */
+                        return $instance->dontRegister();
+        }
+                    /**
+         * Register all actions found in the provided paths.
+         *
+         * @static 
+         */ 
+        public static function registerAllPaths()
+        {
+                        /** @var \Lorisleiva\Actions\ActionManager $instance */
+                        return $instance->registerAllPaths();
+        }
+                    /**
+         * Register one action either through an object or its classname.
+         *
+         * @param \Lorisleiva\Actions\Action|string $action
+         * @throws ReflectionException
+         * @static 
+         */ 
+        public static function register($action)
+        {
+                        /** @var \Lorisleiva\Actions\ActionManager $instance */
+                        return $instance->register($action);
+        }
+                    /**
+         * Determine if an object or its classname is an Action.
+         *
+         * @param \Lorisleiva\Actions\Action|string $action
+         * @return bool 
+         * @throws ReflectionException
+         * @static 
+         */ 
+        public static function isAction($action)
+        {
+                        /** @var \Lorisleiva\Actions\ActionManager $instance */
+                        return $instance->isAction($action);
+        }
+                    /**
+         * Determine if an action has already been loaded.
+         *
+         * @param \Lorisleiva\Actions\Action|string $action
+         * @return bool 
+         * @static 
+         */ 
+        public static function isRegistered($action)
+        {
+                        /** @var \Lorisleiva\Actions\ActionManager $instance */
+                        return $instance->isRegistered($action);
+        }
+                    /**
+         * Returns a collection of all actions that have been registered.
+         *
+         * @return \Lorisleiva\Actions\Collection 
+         * @static 
+         */ 
+        public static function getRegisteredActions()
+        {
+                        /** @var \Lorisleiva\Actions\ActionManager $instance */
+                        return $instance->getRegisteredActions();
+        }
+         
+    }
+     
+}
+
     namespace Illuminate\Filesystem { 
             /**
      * 
@@ -16142,6 +16136,29 @@
         public static function transformEnums($transformations)
         {
                         \Illuminate\Http\Request::transformEnums($transformations);
+        }
+         
+    }
+     
+}
+
+    namespace Illuminate\Routing { 
+            /**
+     * 
+     *
+     * @mixin \Illuminate\Routing\RouteRegistrar
+     */ 
+        class Router {
+                    /**
+         * 
+         *
+         * @see \Lorisleiva\Actions\ActionServiceProvider::boot()
+         * @param mixed $group
+         * @static 
+         */ 
+        public static function actions($group)
+        {
+                        return \Illuminate\Routing\Router::actions($group);
         }
          
     }
@@ -19372,6 +19389,7 @@ namespace  {
             class Flare extends \Facade\Ignition\Facades\Flare {}
             class Agent extends \Jenssegers\Agent\Facades\Agent {}
             class Livewire extends \Livewire\Livewire {}
+            class Actions extends \Lorisleiva\Actions\Facades\Actions {}
      
 }
 
